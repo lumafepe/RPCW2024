@@ -1,8 +1,8 @@
-#Representação e Processamento de Conhecimento na Web
+# Representação e Processamento de Conhecimento na Web
 
-##Introdução
+## Introdução
 Repositorios para os TPCs da UC.
 
-#Aluno
-##Nome: Luís Manuel Fernandes Pereira
-##ID: PG54009
+# Aluno
+* **Nome:** Luís Manuel Fernandes Pereira
+* **ID:** PG54009
