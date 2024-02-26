@@ -1,0 +1,4220 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/music#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/music> .
+
+<http://rpcw.di.uminho.pt/2024/music> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/music#emCurso
+:emCurso rdf:type owl:ObjectProperty ;
+         rdfs:domain :Alunos ;
+         rdfs:range :Cursos .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#ensinaInstrumento
+:ensinaInstrumento rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Cursos ;
+                   rdfs:range :Instrumentos .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#temInstrumento
+:temInstrumento rdf:type owl:ObjectProperty ;
+                rdfs:domain :Alunos ;
+                rdfs:range :Instrumentos .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/music#anoCurso_aluno
+:anoCurso_aluno rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Alunos ;
+                rdfs:range xsd:long .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#dataNascimento_aluno
+:dataNascimento_aluno rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Alunos ;
+                      rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#designacao_curso
+:designacao_curso rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Cursos ;
+                  rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#duracao_curso
+:duracao_curso rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Cursos ;
+               rdfs:range xsd:long .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#id_aluno
+:id_aluno rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Alunos ;
+          rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#id_curso
+:id_curso rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Cursos ;
+          rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#id_instrumento
+:id_instrumento rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Instrumentos ;
+                rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#nome_aluno
+:nome_aluno rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Alunos ;
+            rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#text_instrumento
+:text_instrumento rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Instrumentos ;
+                  rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/music#Alunos
+:Alunos rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#Cursos
+:Cursos rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/music#Instrumentos
+:Instrumentos rdf:type owl:Class .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Alunos
+                :Cursos
+                :Instrumentos
+              )
+] .
+###  http://rpcw.di.uminho.pt/2024/music#I1
+<http://rpcw.di.uminho.pt/2024/music#I1> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Clarinete"^^xsd:string ;
+  :id_instrumento "I1"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I2
+<http://rpcw.di.uminho.pt/2024/music#I2> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Contrabaixo"^^xsd:string ;
+  :id_instrumento "I2"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I3
+<http://rpcw.di.uminho.pt/2024/music#I3> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Corne Inglês"^^xsd:string ;
+  :id_instrumento "I3"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I4
+<http://rpcw.di.uminho.pt/2024/music#I4> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Eufónio"^^xsd:string ;
+  :id_instrumento "I4"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I5
+<http://rpcw.di.uminho.pt/2024/music#I5> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Fagote"^^xsd:string ;
+  :id_instrumento "I5"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I6
+<http://rpcw.di.uminho.pt/2024/music#I6> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Flauta"^^xsd:string ;
+  :id_instrumento "I6"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I7
+<http://rpcw.di.uminho.pt/2024/music#I7> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Fliscorne"^^xsd:string ;
+  :id_instrumento "I7"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I8
+<http://rpcw.di.uminho.pt/2024/music#I8> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Guitarra"^^xsd:string ;
+  :id_instrumento "I8"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I9
+<http://rpcw.di.uminho.pt/2024/music#I9> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Harpa"^^xsd:string ;
+  :id_instrumento "I9"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I10
+<http://rpcw.di.uminho.pt/2024/music#I10> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Oboé"^^xsd:string ;
+  :id_instrumento "I10"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I11
+<http://rpcw.di.uminho.pt/2024/music#I11> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Orgão"^^xsd:string ;
+  :id_instrumento "I11"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I12
+<http://rpcw.di.uminho.pt/2024/music#I12> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Percussão"^^xsd:string ;
+  :id_instrumento "I12"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I13
+<http://rpcw.di.uminho.pt/2024/music#I13> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Piano"^^xsd:string ;
+  :id_instrumento "I13"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I14
+<http://rpcw.di.uminho.pt/2024/music#I14> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Saxofone"^^xsd:string ;
+  :id_instrumento "I14"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I15
+<http://rpcw.di.uminho.pt/2024/music#I15> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Trombone"^^xsd:string ;
+  :id_instrumento "I15"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I16
+<http://rpcw.di.uminho.pt/2024/music#I16> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Trompa"^^xsd:string ;
+  :id_instrumento "I16"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I17
+<http://rpcw.di.uminho.pt/2024/music#I17> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Trompete"^^xsd:string ;
+  :id_instrumento "I17"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I18
+<http://rpcw.di.uminho.pt/2024/music#I18> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Tuba"^^xsd:string ;
+  :id_instrumento "I18"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I19
+<http://rpcw.di.uminho.pt/2024/music#I19> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Violoncelo"^^xsd:string ;
+  :id_instrumento "I19"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I20
+<http://rpcw.di.uminho.pt/2024/music#I20> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Violino"^^xsd:string ;
+  :id_instrumento "I20"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I21
+<http://rpcw.di.uminho.pt/2024/music#I21> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Viola de Arco"^^xsd:string ;
+  :id_instrumento "I21"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#I22
+<http://rpcw.di.uminho.pt/2024/music#I22> rdf:type owl:NamedIndividual ,
+    :Instrumentos ;
+  :text_instrumento "Bandolim"^^xsd:string ;
+  :id_instrumento "I22"^^xsd:string .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB1
+<http://rpcw.di.uminho.pt/2024/music#CB1> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Clarinete"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB1"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS23
+<http://rpcw.di.uminho.pt/2024/music#CS23> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Clarinete"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS23"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB2
+<http://rpcw.di.uminho.pt/2024/music#CB2> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Contrabaixo"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB2"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS24
+<http://rpcw.di.uminho.pt/2024/music#CS24> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Contrabaixo"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS24"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB3
+<http://rpcw.di.uminho.pt/2024/music#CB3> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Corne Inglês"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB3"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS25
+<http://rpcw.di.uminho.pt/2024/music#CS25> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Corne Inglês"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS25"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB4
+<http://rpcw.di.uminho.pt/2024/music#CB4> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Eufónio"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB4"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS26
+<http://rpcw.di.uminho.pt/2024/music#CS26> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Eufónio"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS26"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB5
+<http://rpcw.di.uminho.pt/2024/music#CB5> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Fagote"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB5"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS27
+<http://rpcw.di.uminho.pt/2024/music#CS27> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Fagote"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS27"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB6
+<http://rpcw.di.uminho.pt/2024/music#CB6> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Flauta"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB6"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS28
+<http://rpcw.di.uminho.pt/2024/music#CS28> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Flauta"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS28"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB7
+<http://rpcw.di.uminho.pt/2024/music#CB7> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Fliscorne"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB7"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS29
+<http://rpcw.di.uminho.pt/2024/music#CS29> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Fliscorne"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS29"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB8
+<http://rpcw.di.uminho.pt/2024/music#CB8> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Guitarra"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB8"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS30
+<http://rpcw.di.uminho.pt/2024/music#CS30> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Guitarra"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS30"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB9
+<http://rpcw.di.uminho.pt/2024/music#CB9> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Harpa"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB9"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS31
+<http://rpcw.di.uminho.pt/2024/music#CS31> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Harpa"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS31"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB10
+<http://rpcw.di.uminho.pt/2024/music#CB10> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Oboé"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB10"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS32
+<http://rpcw.di.uminho.pt/2024/music#CS32> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Oboé"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS32"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB11
+<http://rpcw.di.uminho.pt/2024/music#CB11> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Orgão"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB11"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS33
+<http://rpcw.di.uminho.pt/2024/music#CS33> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Orgão"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS33"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB12
+<http://rpcw.di.uminho.pt/2024/music#CB12> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Percussão"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB12"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS34
+<http://rpcw.di.uminho.pt/2024/music#CS34> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Percussão"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS34"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB13
+<http://rpcw.di.uminho.pt/2024/music#CB13> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Piano"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB13"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS35
+<http://rpcw.di.uminho.pt/2024/music#CS35> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Piano"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS35"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB14
+<http://rpcw.di.uminho.pt/2024/music#CB14> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Saxofone"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB14"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS36
+<http://rpcw.di.uminho.pt/2024/music#CS36> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Saxofone"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS36"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB15
+<http://rpcw.di.uminho.pt/2024/music#CB15> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Trombone"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB15"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS37
+<http://rpcw.di.uminho.pt/2024/music#CS37> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Trombone"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS37"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB16
+<http://rpcw.di.uminho.pt/2024/music#CB16> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Trompa"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB16"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS38
+<http://rpcw.di.uminho.pt/2024/music#CS38> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Trompa"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS38"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB17
+<http://rpcw.di.uminho.pt/2024/music#CB17> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Trompete"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB17"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS39
+<http://rpcw.di.uminho.pt/2024/music#CS39> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Trompete"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS39"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB18
+<http://rpcw.di.uminho.pt/2024/music#CB18> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Tuba"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB18"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS40
+<http://rpcw.di.uminho.pt/2024/music#CS40> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Tuba"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS40"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB19
+<http://rpcw.di.uminho.pt/2024/music#CB19> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Violoncelo"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB19"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS41
+<http://rpcw.di.uminho.pt/2024/music#CS41> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Violoncelo"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS41"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB20
+<http://rpcw.di.uminho.pt/2024/music#CB20> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Violino"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB20"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS42
+<http://rpcw.di.uminho.pt/2024/music#CS42> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Violino"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS42"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB21
+<http://rpcw.di.uminho.pt/2024/music#CB21> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Viola de Arco"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB21"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS43
+<http://rpcw.di.uminho.pt/2024/music#CS43> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Viola de Arco"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS43"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CB22
+<http://rpcw.di.uminho.pt/2024/music#CB22> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Básico de Bandolim"^^xsd:string ;
+  :duracao_curso "5"^^xsd:long ;
+  :id_curso "CB22"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#CS44
+<http://rpcw.di.uminho.pt/2024/music#CS44> rdf:type owl:NamedIndividual ,
+    :Cursos ;
+  :designacao_curso "Curso Supletivo de Bandolim"^^xsd:string ;
+  :duracao_curso "3"^^xsd:long ;
+  :id_curso "CS44"^^xsd:long ;
+  :ensinaInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A1510
+<http://rpcw.di.uminho.pt/2024/music#A1510> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ADEMAR FONTES DE MAGALHAES GONCALVES"^^xsd:string ;
+  :dataNascimento_aluno "1999-4-19"^^xsd:string ;
+  :id_aluno "A1510"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB8> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A32597
+<http://rpcw.di.uminho.pt/2024/music#A32597> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ADERITO NELSON MIRANDA DE OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2004-9-5"^^xsd:string ;
+  :id_aluno "A32597"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS19> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36539
+<http://rpcw.di.uminho.pt/2024/music#A36539> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ADMILSON CESAR ANDRADE RODRIGUES"^^xsd:string ;
+  :dataNascimento_aluno "2002-10-26"^^xsd:string ;
+  :id_aluno "A36539"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS21> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38165
+<http://rpcw.di.uminho.pt/2024/music#A38165> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "AFONSO DELERUE ARRIAGA"^^xsd:string ;
+  :dataNascimento_aluno "1996-2-25"^^xsd:string ;
+  :id_aluno "A38165"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38176
+<http://rpcw.di.uminho.pt/2024/music#A38176> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "AGOSTINHO MANUEL ALVES DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2000-7-18"^^xsd:string ;
+  :id_aluno "A38176"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38196
+<http://rpcw.di.uminho.pt/2024/music#A38196> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ALEXANDRE COELHO CARVALHO"^^xsd:string ;
+  :dataNascimento_aluno "1997-12-7"^^xsd:string ;
+  :id_aluno "A38196"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB14> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35271
+<http://rpcw.di.uminho.pt/2024/music#A35271> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ALEXANDRE JORGE CAMELO FARIA"^^xsd:string ;
+  :dataNascimento_aluno "2002-12-20"^^xsd:string ;
+  :id_aluno "A35271"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS6> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38193
+<http://rpcw.di.uminho.pt/2024/music#A38193> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ALEXANDRE MANUEL PEREIRA DE MIRANDA PINTO"^^xsd:string ;
+  :dataNascimento_aluno "2001-2-2"^^xsd:string ;
+  :id_aluno "A38193"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB17> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A18141
+<http://rpcw.di.uminho.pt/2024/music#A18141> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ALEXANDRE MIGUEL DA COSTA FERREIRA DOS SANTOS"^^xsd:string ;
+  :dataNascimento_aluno "2001-6-23"^^xsd:string ;
+  :id_aluno "A18141"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB11> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38218
+<http://rpcw.di.uminho.pt/2024/music#A38218> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ALEXANDRINA MARIA FERREIRA LEMOS"^^xsd:string ;
+  :dataNascimento_aluno "2002-7-14"^^xsd:string ;
+  :id_aluno "A38218"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS13> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36487
+<http://rpcw.di.uminho.pt/2024/music#A36487> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ALI DOS REIS MOTA"^^xsd:string ;
+  :dataNascimento_aluno "1996-1-7"^^xsd:string ;
+  :id_aluno "A36487"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB17> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35272
+<http://rpcw.di.uminho.pt/2024/music#A35272> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANA LUISA PARREIRA NUNES"^^xsd:string ;
+  :dataNascimento_aluno "1997-11-7"^^xsd:string ;
+  :id_aluno "A35272"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB10> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A27589
+<http://rpcw.di.uminho.pt/2024/music#A27589> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANA MARGARIDA FIDALGO PINHEIRO"^^xsd:string ;
+  :dataNascimento_aluno "2002-1-13"^^xsd:string ;
+  :id_aluno "A27589"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS9> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A25073
+<http://rpcw.di.uminho.pt/2024/music#A25073> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANA MARGARIDA LIMA ALEM"^^xsd:string ;
+  :dataNascimento_aluno "2003-12-12"^^xsd:string ;
+  :id_aluno "A25073"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS19> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38169
+<http://rpcw.di.uminho.pt/2024/music#A38169> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANDRE ABILIO NUNES ROCHA RODRIGUES"^^xsd:string ;
+  :dataNascimento_aluno "1999-6-5"^^xsd:string ;
+  :id_aluno "A38169"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB4> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33822
+<http://rpcw.di.uminho.pt/2024/music#A33822> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANDRE FERNANDES MARTINS"^^xsd:string ;
+  :dataNascimento_aluno "2001-11-13"^^xsd:string ;
+  :id_aluno "A33822"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB1> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38214
+<http://rpcw.di.uminho.pt/2024/music#A38214> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANDRE FILIPE DE SOUSA VIVEIROS"^^xsd:string ;
+  :dataNascimento_aluno "1997-2-14"^^xsd:string ;
+  :id_aluno "A38214"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35274
+<http://rpcw.di.uminho.pt/2024/music#A35274> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANDRE FILIPE OLIVEIRA MARTINS"^^xsd:string ;
+  :dataNascimento_aluno "2003-7-20"^^xsd:string ;
+  :id_aluno "A35274"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS21> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A29871
+<http://rpcw.di.uminho.pt/2024/music#A29871> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANDRE LEITE FERREIRA"^^xsd:string ;
+  :dataNascimento_aluno "1997-8-1"^^xsd:string ;
+  :id_aluno "A29871"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB14> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38215
+<http://rpcw.di.uminho.pt/2024/music#A38215> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANDRE RIBEIRO RODRIGUES"^^xsd:string ;
+  :dataNascimento_aluno "1998-5-28"^^xsd:string ;
+  :id_aluno "A38215"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB16> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38117
+<http://rpcw.di.uminho.pt/2024/music#A38117> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANTONIO ANDRE MARQUES RIBEIRO"^^xsd:string ;
+  :dataNascimento_aluno "2002-2-20"^^xsd:string ;
+  :id_aluno "A38117"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS19> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35277
+<http://rpcw.di.uminho.pt/2024/music#A35277> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANTONIO MANUEL MARTINS PINTO"^^xsd:string ;
+  :dataNascimento_aluno "2002-5-5"^^xsd:string ;
+  :id_aluno "A35277"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS2> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35278
+<http://rpcw.di.uminho.pt/2024/music#A35278> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANTONIO MANUEL RODRIGUES FERNANDES"^^xsd:string ;
+  :dataNascimento_aluno "2001-3-13"^^xsd:string ;
+  :id_aluno "A35278"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38138
+<http://rpcw.di.uminho.pt/2024/music#A38138> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANTONIO NUNO BACELAR MARTINS BARREIRO COVAS"^^xsd:string ;
+  :dataNascimento_aluno "1998-10-7"^^xsd:string ;
+  :id_aluno "A38138"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35280
+<http://rpcw.di.uminho.pt/2024/music#A35280> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANTONIO RICARDO PEREIRA GONCALVES"^^xsd:string ;
+  :dataNascimento_aluno "1997-2-10"^^xsd:string ;
+  :id_aluno "A35280"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33057
+<http://rpcw.di.uminho.pt/2024/music#A33057> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANTONIO RUI MIRANDA DE LEMOS"^^xsd:string ;
+  :dataNascimento_aluno "1999-7-5"^^xsd:string ;
+  :id_aluno "A33057"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB8> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38143
+<http://rpcw.di.uminho.pt/2024/music#A38143> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANTONIO SERGIO MATOS SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2000-1-9"^^xsd:string ;
+  :id_aluno "A38143"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB3> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30166
+<http://rpcw.di.uminho.pt/2024/music#A30166> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ANTONIO TIAGO MORGADO PEREIRA"^^xsd:string ;
+  :dataNascimento_aluno "2001-9-6"^^xsd:string ;
+  :id_aluno "A30166"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB17> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36971
+<http://rpcw.di.uminho.pt/2024/music#A36971> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "AUGUSTO JORGE PEREIRA DA COSTA"^^xsd:string ;
+  :dataNascimento_aluno "2001-4-2"^^xsd:string ;
+  :id_aluno "A36971"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38132
+<http://rpcw.di.uminho.pt/2024/music#A38132> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "AVELINO JOSE DA COSTA REGO"^^xsd:string ;
+  :dataNascimento_aluno "2002-4-6"^^xsd:string ;
+  :id_aluno "A38132"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS21> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33140
+<http://rpcw.di.uminho.pt/2024/music#A33140> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "AVELINO RODRIGO ARAUJO SEMELHE DE SOUSA PINTO"^^xsd:string ;
+  :dataNascimento_aluno "2005-2-11"^^xsd:string ;
+  :id_aluno "A33140"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS7> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33141
+<http://rpcw.di.uminho.pt/2024/music#A33141> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BARBARA ALEXANDRA EUSEBIO FREITAS"^^xsd:string ;
+  :dataNascimento_aluno "1997-8-23"^^xsd:string ;
+  :id_aluno "A33141"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB7> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33291
+<http://rpcw.di.uminho.pt/2024/music#A33291> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BARBARA SOFIA ARAUJO DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "1996-9-28"^^xsd:string ;
+  :id_aluno "A33291"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB8> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33142
+<http://rpcw.di.uminho.pt/2024/music#A33142> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO CESAR PEREIRA DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2004-11-16"^^xsd:string ;
+  :id_aluno "A33142"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS1> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A20044
+<http://rpcw.di.uminho.pt/2024/music#A20044> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO DE ALMEIDA RAMOS PEREIRA"^^xsd:string ;
+  :dataNascimento_aluno "1999-7-28"^^xsd:string ;
+  :id_aluno "A20044"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35283
+<http://rpcw.di.uminho.pt/2024/music#A35283> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO EDGAR BERNARDO TEIXEIRA"^^xsd:string ;
+  :dataNascimento_aluno "1999-2-22"^^xsd:string ;
+  :id_aluno "A35283"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB13> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35284
+<http://rpcw.di.uminho.pt/2024/music#A35284> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO EMANUEL TEIXEIRA DE CASTRO ARAUJO"^^xsd:string ;
+  :dataNascimento_aluno "2005-6-4"^^xsd:string ;
+  :id_aluno "A35284"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38156
+<http://rpcw.di.uminho.pt/2024/music#A38156> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO FILIPE DA COSTA HERMENEGILDO"^^xsd:string ;
+  :dataNascimento_aluno "2000-6-11"^^xsd:string ;
+  :id_aluno "A38156"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB6> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35285
+<http://rpcw.di.uminho.pt/2024/music#A35285> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO GABRIEL LEAL MACHADO DOS SANTOS"^^xsd:string ;
+  :dataNascimento_aluno "1999-4-14"^^xsd:string ;
+  :id_aluno "A35285"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB8> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36422
+<http://rpcw.di.uminho.pt/2024/music#A36422> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO JOSE DE MACEDO SOARES AMOR"^^xsd:string ;
+  :dataNascimento_aluno "1999-2-14"^^xsd:string ;
+  :id_aluno "A36422"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB20> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33143
+<http://rpcw.di.uminho.pt/2024/music#A33143> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO MIGUEL CAMPOS RODRIGUES"^^xsd:string ;
+  :dataNascimento_aluno "1997-3-20"^^xsd:string ;
+  :id_aluno "A33143"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB3> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33145
+<http://rpcw.di.uminho.pt/2024/music#A33145> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO MIGUEL FLORES DIAMANTINO"^^xsd:string ;
+  :dataNascimento_aluno "1997-6-20"^^xsd:string ;
+  :id_aluno "A33145"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33146
+<http://rpcw.di.uminho.pt/2024/music#A33146> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO MIGUEL MAGALHAES AZEVEDO"^^xsd:string ;
+  :dataNascimento_aluno "2003-11-15"^^xsd:string ;
+  :id_aluno "A33146"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS18> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33148
+<http://rpcw.di.uminho.pt/2024/music#A33148> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO MIGUEL TEIXEIRA PAIVA DE FARIA"^^xsd:string ;
+  :dataNascimento_aluno "1998-3-21"^^xsd:string ;
+  :id_aluno "A33148"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB15> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38124
+<http://rpcw.di.uminho.pt/2024/music#A38124> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO RICARDO CUNHA MAGALHAES"^^xsd:string ;
+  :dataNascimento_aluno "2000-1-21"^^xsd:string ;
+  :id_aluno "A38124"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30176
+<http://rpcw.di.uminho.pt/2024/music#A30176> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "BRUNO RICARDO DUARTE MAGALHAES"^^xsd:string ;
+  :dataNascimento_aluno "1998-4-14"^^xsd:string ;
+  :id_aluno "A30176"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB18> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35808
+<http://rpcw.di.uminho.pt/2024/music#A35808> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "CANDIDO MIGUEL REBELO BARROS"^^xsd:string ;
+  :dataNascimento_aluno "2002-11-11"^^xsd:string ;
+  :id_aluno "A35808"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS7> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38126
+<http://rpcw.di.uminho.pt/2024/music#A38126> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "CARLOS ALFREDO MACIEIRA DE FARIA"^^xsd:string ;
+  :dataNascimento_aluno "2005-6-14"^^xsd:string ;
+  :id_aluno "A38126"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS16> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33689
+<http://rpcw.di.uminho.pt/2024/music#A33689> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "CARLOS ANDRE BRITO RIBEIRO"^^xsd:string ;
+  :dataNascimento_aluno "2001-5-10"^^xsd:string ;
+  :id_aluno "A33689"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38125
+<http://rpcw.di.uminho.pt/2024/music#A38125> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "CARLOS CESAR MADUREIRA ROMANO"^^xsd:string ;
+  :dataNascimento_aluno "2002-5-13"^^xsd:string ;
+  :id_aluno "A38125"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A24654
+<http://rpcw.di.uminho.pt/2024/music#A24654> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "CARLOS DE SOUSA CABRAL BRANDAO"^^xsd:string ;
+  :dataNascimento_aluno "2005-11-2"^^xsd:string ;
+  :id_aluno "A24654"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS14> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A20021
+<http://rpcw.di.uminho.pt/2024/music#A20021> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "CARLOS JOSE DA CUNHA RIBEIRO"^^xsd:string ;
+  :dataNascimento_aluno "1999-12-4"^^xsd:string ;
+  :id_aluno "A20021"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB19> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35291
+<http://rpcw.di.uminho.pt/2024/music#A35291> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "CARLOS MIGUEL TAVARES LOPES"^^xsd:string ;
+  :dataNascimento_aluno "1998-6-17"^^xsd:string ;
+  :id_aluno "A35291"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB15> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A34640
+<http://rpcw.di.uminho.pt/2024/music#A34640> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "CARLOS PRUDENCIO DO ESPIRITO CRISOSTOMO"^^xsd:string ;
+  :dataNascimento_aluno "2002-8-9"^^xsd:string ;
+  :id_aluno "A34640"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS3> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38207
+<http://rpcw.di.uminho.pt/2024/music#A38207> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "CATARINA ISABEL DE OLIVEIRA MATEUS"^^xsd:string ;
+  :dataNascimento_aluno "2003-8-22"^^xsd:string ;
+  :id_aluno "A38207"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS2> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A32010
+<http://rpcw.di.uminho.pt/2024/music#A32010> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "CATARINA SOFIA MARTINHO LUIS"^^xsd:string ;
+  :dataNascimento_aluno "2005-9-1"^^xsd:string ;
+  :id_aluno "A32010"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS10> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35052
+<http://rpcw.di.uminho.pt/2024/music#A35052> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "CESAR FILIPE DA CRUZ GOMES"^^xsd:string ;
+  :dataNascimento_aluno "1996-5-24"^^xsd:string ;
+  :id_aluno "A35052"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35440
+<http://rpcw.di.uminho.pt/2024/music#A35440> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DANIEL BARBOSA ALVES"^^xsd:string ;
+  :dataNascimento_aluno "2002-6-26"^^xsd:string ;
+  :id_aluno "A35440"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS18> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A32648
+<http://rpcw.di.uminho.pt/2024/music#A32648> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DANIEL FILIPE PERES FERREIRA"^^xsd:string ;
+  :dataNascimento_aluno "2002-1-23"^^xsd:string ;
+  :id_aluno "A32648"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS5> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33152
+<http://rpcw.di.uminho.pt/2024/music#A33152> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DANIEL RICARDO DE CASTRO MENDES"^^xsd:string ;
+  :dataNascimento_aluno "2001-10-12"^^xsd:string ;
+  :id_aluno "A33152"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB20> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38211
+<http://rpcw.di.uminho.pt/2024/music#A38211> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DANIEL TORRES GONCALVES"^^xsd:string ;
+  :dataNascimento_aluno "2003-8-16"^^xsd:string ;
+  :id_aluno "A38211"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS12> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38210
+<http://rpcw.di.uminho.pt/2024/music#A38210> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DANIELA CRISTINA GARCIA TEIXEIRA"^^xsd:string ;
+  :dataNascimento_aluno "1998-7-10"^^xsd:string ;
+  :id_aluno "A38210"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A22854
+<http://rpcw.di.uminho.pt/2024/music#A22854> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DAVI CARNEIRO PEREIRA"^^xsd:string ;
+  :dataNascimento_aluno "1999-3-10"^^xsd:string ;
+  :id_aluno "A22854"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35293
+<http://rpcw.di.uminho.pt/2024/music#A35293> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DAVID DANIEL CARDOSO DE OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "1999-11-22"^^xsd:string ;
+  :id_aluno "A35293"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB6> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35294
+<http://rpcw.di.uminho.pt/2024/music#A35294> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DIAMANTINO JOSE MADEIRA ABOBELEIRA"^^xsd:string ;
+  :dataNascimento_aluno "1996-11-20"^^xsd:string ;
+  :id_aluno "A35294"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB20> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38166
+<http://rpcw.di.uminho.pt/2024/music#A38166> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DIOGO FILIPE DA SILVA CARDOSO"^^xsd:string ;
+  :dataNascimento_aluno "2000-6-26"^^xsd:string ;
+  :id_aluno "A38166"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB19> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38164
+<http://rpcw.di.uminho.pt/2024/music#A38164> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DIOGO PAULO DA FONTE LAPA"^^xsd:string ;
+  :dataNascimento_aluno "2004-8-28"^^xsd:string ;
+  :id_aluno "A38164"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38167
+<http://rpcw.di.uminho.pt/2024/music#A38167> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DUARTE ALEXANDRE DA CUNHA ALVES"^^xsd:string ;
+  :dataNascimento_aluno "2002-7-20"^^xsd:string ;
+  :id_aluno "A38167"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS22> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33155
+<http://rpcw.di.uminho.pt/2024/music#A33155> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DUARTE FILIPE AFONSO CHAVES"^^xsd:string ;
+  :dataNascimento_aluno "2002-4-2"^^xsd:string ;
+  :id_aluno "A33155"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS1> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35298
+<http://rpcw.di.uminho.pt/2024/music#A35298> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "DUARTE NUNO MALHEIRO DE BARREIRO"^^xsd:string ;
+  :dataNascimento_aluno "1999-5-10"^^xsd:string ;
+  :id_aluno "A35298"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB3> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38190
+<http://rpcw.di.uminho.pt/2024/music#A38190> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ELISEU CARNEIRO DOS SANTOS ROCHA"^^xsd:string ;
+  :dataNascimento_aluno "2005-3-14"^^xsd:string ;
+  :id_aluno "A38190"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS15> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35300
+<http://rpcw.di.uminho.pt/2024/music#A35300> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "EMANUEL CERDEIRA MESQUITA"^^xsd:string ;
+  :dataNascimento_aluno "2001-2-15"^^xsd:string ;
+  :id_aluno "A35300"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB10> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30305
+<http://rpcw.di.uminho.pt/2024/music#A30305> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "EMANUEL JOSE ANTUNES FERNANDES"^^xsd:string ;
+  :dataNascimento_aluno "2004-4-15"^^xsd:string ;
+  :id_aluno "A30305"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS19> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36757
+<http://rpcw.di.uminho.pt/2024/music#A36757> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ERNESTO MANUEL DA SILVA LOPES"^^xsd:string ;
+  :dataNascimento_aluno "2002-6-6"^^xsd:string ;
+  :id_aluno "A36757"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33157
+<http://rpcw.di.uminho.pt/2024/music#A33157> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "EURICO MANUEL FOLGADO AFONSO"^^xsd:string ;
+  :dataNascimento_aluno "2005-1-23"^^xsd:string ;
+  :id_aluno "A33157"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS1> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A27608
+<http://rpcw.di.uminho.pt/2024/music#A27608> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "EURICO MANUEL TELES MORAIS"^^xsd:string ;
+  :dataNascimento_aluno "1999-5-12"^^xsd:string ;
+  :id_aluno "A27608"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB15> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35302
+<http://rpcw.di.uminho.pt/2024/music#A35302> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FABIO ROBERTO LEITE MATOS"^^xsd:string ;
+  :dataNascimento_aluno "1996-8-19"^^xsd:string ;
+  :id_aluno "A35302"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB11> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33158
+<http://rpcw.di.uminho.pt/2024/music#A33158> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FAUSTO MIGUEL PACHECO FARIA VIANA"^^xsd:string ;
+  :dataNascimento_aluno "2003-1-11"^^xsd:string ;
+  :id_aluno "A33158"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS5> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35465
+<http://rpcw.di.uminho.pt/2024/music#A35465> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FERNANDO ANTONIO ALVES LOPES"^^xsd:string ;
+  :dataNascimento_aluno "1999-2-21"^^xsd:string ;
+  :id_aluno "A35465"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB19> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33858
+<http://rpcw.di.uminho.pt/2024/music#A33858> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FERNANDO JORGE PINTO LIMA"^^xsd:string ;
+  :dataNascimento_aluno "1999-7-13"^^xsd:string ;
+  :id_aluno "A33858"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB13> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A26737
+<http://rpcw.di.uminho.pt/2024/music#A26737> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FERNANDO MIGUEL SOUSA LISBOA"^^xsd:string ;
+  :dataNascimento_aluno "2005-7-26"^^xsd:string ;
+  :id_aluno "A26737"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS16> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30187
+<http://rpcw.di.uminho.pt/2024/music#A30187> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FERNANDO SERGIO MADALENO PEREIRA"^^xsd:string ;
+  :dataNascimento_aluno "2005-1-26"^^xsd:string ;
+  :id_aluno "A30187"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS9> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35303
+<http://rpcw.di.uminho.pt/2024/music#A35303> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FILIPE ANTONIO GONCALVES DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "1999-5-8"^^xsd:string ;
+  :id_aluno "A35303"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB1> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36445
+<http://rpcw.di.uminho.pt/2024/music#A36445> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FILIPE BARROSO DE OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2001-9-25"^^xsd:string ;
+  :id_aluno "A36445"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38595
+<http://rpcw.di.uminho.pt/2024/music#A38595> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FILIPE GONCALO GONCALVES DA COSTA"^^xsd:string ;
+  :dataNascimento_aluno "1999-4-2"^^xsd:string ;
+  :id_aluno "A38595"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38187
+<http://rpcw.di.uminho.pt/2024/music#A38187> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FLAVIO MIGUEL XAVIER FERREIRA"^^xsd:string ;
+  :dataNascimento_aluno "1996-6-19"^^xsd:string ;
+  :id_aluno "A38187"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB10> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36424
+<http://rpcw.di.uminho.pt/2024/music#A36424> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FRANCISCO EURICO PINTO CORTEZ MARTINS LEITE"^^xsd:string ;
+  :dataNascimento_aluno "2001-5-14"^^xsd:string ;
+  :id_aluno "A36424"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB11> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35308
+<http://rpcw.di.uminho.pt/2024/music#A35308> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FRANCISCO JOSE MAIO LEITE"^^xsd:string ;
+  :dataNascimento_aluno "1996-6-2"^^xsd:string ;
+  :id_aluno "A35308"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35443
+<http://rpcw.di.uminho.pt/2024/music#A35443> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FRANCISCO JOSE MARTINS GOMES"^^xsd:string ;
+  :dataNascimento_aluno "2002-4-6"^^xsd:string ;
+  :id_aluno "A35443"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS22> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A27616
+<http://rpcw.di.uminho.pt/2024/music#A27616> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "FRANCISCO JOSE PRATA DA PAZ"^^xsd:string ;
+  :dataNascimento_aluno "1996-7-3"^^xsd:string ;
+  :id_aluno "A27616"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38163
+<http://rpcw.di.uminho.pt/2024/music#A38163> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "GASPAR AUGUSTO SIMOES CORREIA VIEIRA LEITE"^^xsd:string ;
+  :dataNascimento_aluno "1996-4-23"^^xsd:string ;
+  :id_aluno "A38163"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39288
+<http://rpcw.di.uminho.pt/2024/music#A39288> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "GENILDO SOARES NEVES"^^xsd:string ;
+  :dataNascimento_aluno "2005-2-22"^^xsd:string ;
+  :id_aluno "A39288"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS15> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33162
+<http://rpcw.di.uminho.pt/2024/music#A33162> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "GONCALO LEAL MACHADO RIBEIRO PINTO"^^xsd:string ;
+  :dataNascimento_aluno "2003-3-25"^^xsd:string ;
+  :id_aluno "A33162"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS5> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35311
+<http://rpcw.di.uminho.pt/2024/music#A35311> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "GONCALO LUIS MALHEIRO DE OLIVEIRA NOVAIS MACHADO"^^xsd:string ;
+  :dataNascimento_aluno "2005-3-5"^^xsd:string ;
+  :id_aluno "A35311"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS22> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39508
+<http://rpcw.di.uminho.pt/2024/music#A39508> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "GONCALO MANUEL CORREIA CALHEIROS"^^xsd:string ;
+  :dataNascimento_aluno "2005-8-15"^^xsd:string ;
+  :id_aluno "A39508"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS5> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33163
+<http://rpcw.di.uminho.pt/2024/music#A33163> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "GONCALO PAULO CUNHA CARDOSO FERREIRA"^^xsd:string ;
+  :dataNascimento_aluno "2004-4-6"^^xsd:string ;
+  :id_aluno "A33163"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS21> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38174
+<http://rpcw.di.uminho.pt/2024/music#A38174> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "GUILHERME REIS BARBOSA"^^xsd:string ;
+  :dataNascimento_aluno "2003-12-14"^^xsd:string ;
+  :id_aluno "A38174"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS12> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33165
+<http://rpcw.di.uminho.pt/2024/music#A33165> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HELDER ARTUR PEIXOTO MAGALHAES"^^xsd:string ;
+  :dataNascimento_aluno "2004-7-5"^^xsd:string ;
+  :id_aluno "A33165"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS13> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35312
+<http://rpcw.di.uminho.pt/2024/music#A35312> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HELDER FILIPE DE CASTRO MARQUES"^^xsd:string ;
+  :dataNascimento_aluno "2002-4-11"^^xsd:string ;
+  :id_aluno "A35312"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS13> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38185
+<http://rpcw.di.uminho.pt/2024/music#A38185> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HELDER JOSE FERREIRA BARBOSA RIBEIRO"^^xsd:string ;
+  :dataNascimento_aluno "1996-6-21"^^xsd:string ;
+  :id_aluno "A38185"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB6> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39503
+<http://rpcw.di.uminho.pt/2024/music#A39503> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HELDER NUNO MARTINS DO VALE TOME"^^xsd:string ;
+  :dataNascimento_aluno "2005-3-4"^^xsd:string ;
+  :id_aluno "A39503"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS10> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36758
+<http://rpcw.di.uminho.pt/2024/music#A36758> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HUGO ALEXANDRE PEREIRA TRIUNFANTE MARTINS"^^xsd:string ;
+  :dataNascimento_aluno "2003-4-20"^^xsd:string ;
+  :id_aluno "A36758"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS21> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38197
+<http://rpcw.di.uminho.pt/2024/music#A38197> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HUGO ALEXANDRE SOBREIRO DE SEIXAS"^^xsd:string ;
+  :dataNascimento_aluno "2004-8-6"^^xsd:string ;
+  :id_aluno "A38197"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33272
+<http://rpcw.di.uminho.pt/2024/music#A33272> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HUGO ANDRE PEIXOTO FREITAS PEREIRA"^^xsd:string ;
+  :dataNascimento_aluno "1998-2-21"^^xsd:string ;
+  :id_aluno "A33272"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35315
+<http://rpcw.di.uminho.pt/2024/music#A35315> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HUGO EMANUEL QUEIROS TEIXEIRA DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2004-1-28"^^xsd:string ;
+  :id_aluno "A35315"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS6> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38202
+<http://rpcw.di.uminho.pt/2024/music#A38202> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HUGO FILIPE NASCIMENTO PEREIRA"^^xsd:string ;
+  :dataNascimento_aluno "2000-4-4"^^xsd:string ;
+  :id_aluno "A38202"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB6> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35316
+<http://rpcw.di.uminho.pt/2024/music#A35316> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HUGO GUILHERME DOS SANTOS RIGOR"^^xsd:string ;
+  :dataNascimento_aluno "2001-2-21"^^xsd:string ;
+  :id_aluno "A35316"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB15> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35395
+<http://rpcw.di.uminho.pt/2024/music#A35395> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HUGO JOSE FERNANDES CARVALHO"^^xsd:string ;
+  :dataNascimento_aluno "1997-6-25"^^xsd:string ;
+  :id_aluno "A35395"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB20> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38204
+<http://rpcw.di.uminho.pt/2024/music#A38204> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "HUGO JOSE PEREIRA PACHECO"^^xsd:string ;
+  :dataNascimento_aluno "1997-10-2"^^xsd:string ;
+  :id_aluno "A38204"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB7> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A26208
+<http://rpcw.di.uminho.pt/2024/music#A26208> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "IGOR MURILO DE ALMEIDA"^^xsd:string ;
+  :dataNascimento_aluno "1998-7-8"^^xsd:string ;
+  :id_aluno "A26208"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33703
+<http://rpcw.di.uminho.pt/2024/music#A33703> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ISABEL MARIA ROSENDO CARDOSO"^^xsd:string ;
+  :dataNascimento_aluno "1996-10-28"^^xsd:string ;
+  :id_aluno "A33703"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38134
+<http://rpcw.di.uminho.pt/2024/music#A38134> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "IVO MANUEL DANTAS MONTEIRO"^^xsd:string ;
+  :dataNascimento_aluno "2002-6-10"^^xsd:string ;
+  :id_aluno "A38134"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS17> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35318
+<http://rpcw.di.uminho.pt/2024/music#A35318> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JASON PETER COSTA"^^xsd:string ;
+  :dataNascimento_aluno "2004-4-25"^^xsd:string ;
+  :id_aluno "A35318"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS14> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33168
+<http://rpcw.di.uminho.pt/2024/music#A33168> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOANA SOUTO DE MIRANDA GONZALEZ"^^xsd:string ;
+  :dataNascimento_aluno "2000-10-13"^^xsd:string ;
+  :id_aluno "A33168"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35319
+<http://rpcw.di.uminho.pt/2024/music#A35319> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO ALEXANDRE VAZ OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2004-6-12"^^xsd:string ;
+  :id_aluno "A35319"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS19> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35320
+<http://rpcw.di.uminho.pt/2024/music#A35320> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO ANTONIO LAVRADOR VILANOVA"^^xsd:string ;
+  :dataNascimento_aluno "2001-2-9"^^xsd:string ;
+  :id_aluno "A35320"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB19> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A32753
+<http://rpcw.di.uminho.pt/2024/music#A32753> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO ARNALDO FREITAS DE ABREU"^^xsd:string ;
+  :dataNascimento_aluno "1998-11-26"^^xsd:string ;
+  :id_aluno "A32753"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38180
+<http://rpcw.di.uminho.pt/2024/music#A38180> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO CARLOS AZEVEDO SALGADO GUIMARAES"^^xsd:string ;
+  :dataNascimento_aluno "2005-11-9"^^xsd:string ;
+  :id_aluno "A38180"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS7> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35321
+<http://rpcw.di.uminho.pt/2024/music#A35321> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO FILIPE FONTES MACHADO"^^xsd:string ;
+  :dataNascimento_aluno "1996-3-27"^^xsd:string ;
+  :id_aluno "A35321"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35322
+<http://rpcw.di.uminho.pt/2024/music#A35322> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO GILBERTO LAMARAO DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2005-5-17"^^xsd:string ;
+  :id_aluno "A35322"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS9> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38133
+<http://rpcw.di.uminho.pt/2024/music#A38133> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO GONCALO BOTICA RIBEIRO DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "1998-3-7"^^xsd:string ;
+  :id_aluno "A38133"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB15> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30201
+<http://rpcw.di.uminho.pt/2024/music#A30201> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO GUILHERME RABACA CAMPOS"^^xsd:string ;
+  :dataNascimento_aluno "2005-3-5"^^xsd:string ;
+  :id_aluno "A30201"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS7> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38123
+<http://rpcw.di.uminho.pt/2024/music#A38123> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO MANUEL DA SILVA SANCHES"^^xsd:string ;
+  :dataNascimento_aluno "1998-7-26"^^xsd:string ;
+  :id_aluno "A38123"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB3> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A34935
+<http://rpcw.di.uminho.pt/2024/music#A34935> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO MANUEL DE CAMPOS GONCALVES"^^xsd:string ;
+  :dataNascimento_aluno "2003-2-17"^^xsd:string ;
+  :id_aluno "A34935"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS1> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35323
+<http://rpcw.di.uminho.pt/2024/music#A35323> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO MARIO MENDES DE OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "1998-1-16"^^xsd:string ;
+  :id_aluno "A35323"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB4> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33172
+<http://rpcw.di.uminho.pt/2024/music#A33172> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO MIGUEL RAPOSO DA SILVA MARQUES"^^xsd:string ;
+  :dataNascimento_aluno "1999-2-11"^^xsd:string ;
+  :id_aluno "A33172"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38191
+<http://rpcw.di.uminho.pt/2024/music#A38191> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO MIGUEL RODRIGUES BATISTA"^^xsd:string ;
+  :dataNascimento_aluno "1997-3-21"^^xsd:string ;
+  :id_aluno "A38191"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB8> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38186
+<http://rpcw.di.uminho.pt/2024/music#A38186> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO NUNO MARQUES DOS SANTOS"^^xsd:string ;
+  :dataNascimento_aluno "2003-5-3"^^xsd:string ;
+  :id_aluno "A38186"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS22> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39750
+<http://rpcw.di.uminho.pt/2024/music#A39750> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PAULO BARBOSA OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "1997-3-5"^^xsd:string ;
+  :id_aluno "A39750"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A22662
+<http://rpcw.di.uminho.pt/2024/music#A22662> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PAULO CARRAPATO ALMEIDA"^^xsd:string ;
+  :dataNascimento_aluno "2005-10-12"^^xsd:string ;
+  :id_aluno "A22662"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS12> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35325
+<http://rpcw.di.uminho.pt/2024/music#A35325> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PAULO COELHO GOMES TEIXEIRA E OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2004-9-25"^^xsd:string ;
+  :id_aluno "A35325"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS9> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A17855
+<http://rpcw.di.uminho.pt/2024/music#A17855> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PAULO DA SILVA CASTRO"^^xsd:string ;
+  :dataNascimento_aluno "2004-9-1"^^xsd:string ;
+  :id_aluno "A17855"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS5> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38175
+<http://rpcw.di.uminho.pt/2024/music#A38175> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PAULO DA SILVA GOMES"^^xsd:string ;
+  :dataNascimento_aluno "2001-5-26"^^xsd:string ;
+  :id_aluno "A38175"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB6> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33173
+<http://rpcw.di.uminho.pt/2024/music#A33173> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PAULO MINHAVA PEIXOTO ASSIS CARDOSO"^^xsd:string ;
+  :dataNascimento_aluno "2003-1-2"^^xsd:string ;
+  :id_aluno "A33173"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS20> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39622
+<http://rpcw.di.uminho.pt/2024/music#A39622> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PAULO SILVA DE VASCONCELOS GUSMAO"^^xsd:string ;
+  :dataNascimento_aluno "2002-1-6"^^xsd:string ;
+  :id_aluno "A39622"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS19> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33175
+<http://rpcw.di.uminho.pt/2024/music#A33175> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PEDRO BACAO COELHO DE BARROS"^^xsd:string ;
+  :dataNascimento_aluno "2001-10-25"^^xsd:string ;
+  :id_aluno "A33175"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A18938
+<http://rpcw.di.uminho.pt/2024/music#A18938> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PEDRO BRITO ANTUNES GUIMARAES"^^xsd:string ;
+  :dataNascimento_aluno "2003-10-28"^^xsd:string ;
+  :id_aluno "A18938"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS13> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33176
+<http://rpcw.di.uminho.pt/2024/music#A33176> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PEDRO GOMES FERNANDES"^^xsd:string ;
+  :dataNascimento_aluno "2004-6-26"^^xsd:string ;
+  :id_aluno "A33176"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS20> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35832
+<http://rpcw.di.uminho.pt/2024/music#A35832> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PEDRO GONCALVES DE CARVALHO"^^xsd:string ;
+  :dataNascimento_aluno "2002-5-1"^^xsd:string ;
+  :id_aluno "A35832"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS12> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38170
+<http://rpcw.di.uminho.pt/2024/music#A38170> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PEDRO OLIVEIRA PEREIRA"^^xsd:string ;
+  :dataNascimento_aluno "2003-4-19"^^xsd:string ;
+  :id_aluno "A38170"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS17> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36425
+<http://rpcw.di.uminho.pt/2024/music#A36425> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PEDRO ROBALO ESPINHO PEREIRA DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2002-6-6"^^xsd:string ;
+  :id_aluno "A36425"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS20> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38212
+<http://rpcw.di.uminho.pt/2024/music#A38212> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO PEDRO SILVA ARAUJO"^^xsd:string ;
+  :dataNascimento_aluno "1998-5-3"^^xsd:string ;
+  :id_aluno "A38212"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB4> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38220
+<http://rpcw.di.uminho.pt/2024/music#A38220> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO RAFAEL FERREIRA VELOSO"^^xsd:string ;
+  :dataNascimento_aluno "1999-11-4"^^xsd:string ;
+  :id_aluno "A38220"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB8> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38199
+<http://rpcw.di.uminho.pt/2024/music#A38199> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO RICARDO DA SILVA CAMPOS"^^xsd:string ;
+  :dataNascimento_aluno "1999-3-26"^^xsd:string ;
+  :id_aluno "A38199"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38198
+<http://rpcw.di.uminho.pt/2024/music#A38198> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAQUIM MACHADO GONCALVES SAMPAIO"^^xsd:string ;
+  :dataNascimento_aluno "2001-10-15"^^xsd:string ;
+  :id_aluno "A38198"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB14> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35328
+<http://rpcw.di.uminho.pt/2024/music#A35328> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOEL ARAUJO ROCHA"^^xsd:string ;
+  :dataNascimento_aluno "1997-4-17"^^xsd:string ;
+  :id_aluno "A35328"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB19> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38157
+<http://rpcw.di.uminho.pt/2024/music#A38157> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOEL HUMBERTO DA SILVA BEIRAO DO VALE CARVALHO"^^xsd:string ;
+  :dataNascimento_aluno "2003-7-15"^^xsd:string ;
+  :id_aluno "A38157"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS21> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A20464
+<http://rpcw.di.uminho.pt/2024/music#A20464> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOEL TITO DA CRUZ PINTO"^^xsd:string ;
+  :dataNascimento_aluno "2004-3-22"^^xsd:string ;
+  :id_aluno "A20464"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS21> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38139
+<http://rpcw.di.uminho.pt/2024/music#A38139> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JORGE ALBERTO FARIA MIRANDA"^^xsd:string ;
+  :dataNascimento_aluno "1997-4-7"^^xsd:string ;
+  :id_aluno "A38139"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB7> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35330
+<http://rpcw.di.uminho.pt/2024/music#A35330> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JORGE ANDRE ALVES DE MELO"^^xsd:string ;
+  :dataNascimento_aluno "2002-8-24"^^xsd:string ;
+  :id_aluno "A35330"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS13> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A16409
+<http://rpcw.di.uminho.pt/2024/music#A16409> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JORGE MANUEL DE CASTRO MAIO GOMES DA COSTA"^^xsd:string ;
+  :dataNascimento_aluno "2005-2-18"^^xsd:string ;
+  :id_aluno "A16409"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS10> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33709
+<http://rpcw.di.uminho.pt/2024/music#A33709> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JORGE MANUEL VIANA RIBEIRO MARTINS FORTE"^^xsd:string ;
+  :dataNascimento_aluno "2005-8-2"^^xsd:string ;
+  :id_aluno "A33709"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS12> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30209
+<http://rpcw.di.uminho.pt/2024/music#A30209> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JORGE MIGUEL GONCALVES DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "1997-4-26"^^xsd:string ;
+  :id_aluno "A30209"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB15> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A21008
+<http://rpcw.di.uminho.pt/2024/music#A21008> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JORGE MIGUEL SILVA MELO PEREIRA"^^xsd:string ;
+  :dataNascimento_aluno "1998-6-11"^^xsd:string ;
+  :id_aluno "A21008"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35331
+<http://rpcw.di.uminho.pt/2024/music#A35331> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE ALEXANDRE DE CARVALHO AMORIM"^^xsd:string ;
+  :dataNascimento_aluno "2003-3-20"^^xsd:string ;
+  :id_aluno "A35331"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS22> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38189
+<http://rpcw.di.uminho.pt/2024/music#A38189> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE ANTONIO DA CUNHA E SILVA"^^xsd:string ;
+  :dataNascimento_aluno "1998-8-3"^^xsd:string ;
+  :id_aluno "A38189"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB3> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A19705
+<http://rpcw.di.uminho.pt/2024/music#A19705> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE ANTONIO PEREIRA CIBRAO"^^xsd:string ;
+  :dataNascimento_aluno "2004-1-12"^^xsd:string ;
+  :id_aluno "A19705"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS11> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30211
+<http://rpcw.di.uminho.pt/2024/music#A30211> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE CARLOS CARVALHO DOS SANTOS"^^xsd:string ;
+  :dataNascimento_aluno "1997-6-3"^^xsd:string ;
+  :id_aluno "A30211"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30212
+<http://rpcw.di.uminho.pt/2024/music#A30212> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE CARLOS DA ROCHA MACHADO"^^xsd:string ;
+  :dataNascimento_aluno "2001-4-6"^^xsd:string ;
+  :id_aluno "A30212"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB10> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36960
+<http://rpcw.di.uminho.pt/2024/music#A36960> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE CARLOS DE FREITAS FONTAO"^^xsd:string ;
+  :dataNascimento_aluno "1999-9-13"^^xsd:string ;
+  :id_aluno "A36960"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB17> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A34434
+<http://rpcw.di.uminho.pt/2024/music#A34434> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE CARLOS MARQUES DIAS"^^xsd:string ;
+  :dataNascimento_aluno "2004-7-1"^^xsd:string ;
+  :id_aluno "A34434"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS13> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35332
+<http://rpcw.di.uminho.pt/2024/music#A35332> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE DIOGO RIBEIRO LIZ DE ALMEIDA"^^xsd:string ;
+  :dataNascimento_aluno "2001-11-5"^^xsd:string ;
+  :id_aluno "A35332"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB13> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39506
+<http://rpcw.di.uminho.pt/2024/music#A39506> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE EDUARDO CORREIA CALHEIROS"^^xsd:string ;
+  :dataNascimento_aluno "1999-6-1"^^xsd:string ;
+  :id_aluno "A39506"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB18> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36761
+<http://rpcw.di.uminho.pt/2024/music#A36761> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE EDUARDO TEIXEIRA RITO"^^xsd:string ;
+  :dataNascimento_aluno "2001-12-11"^^xsd:string ;
+  :id_aluno "A36761"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB14> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38224
+<http://rpcw.di.uminho.pt/2024/music#A38224> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE FILIPE HENRIQUES VILAS BOAS"^^xsd:string ;
+  :dataNascimento_aluno "1999-2-12"^^xsd:string ;
+  :id_aluno "A38224"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB12> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35333
+<http://rpcw.di.uminho.pt/2024/music#A35333> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE FILIPE QUEIJO FERNANDES"^^xsd:string ;
+  :dataNascimento_aluno "1999-11-9"^^xsd:string ;
+  :id_aluno "A35333"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB19> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A23916
+<http://rpcw.di.uminho.pt/2024/music#A23916> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE GRACA DA NOBREGA"^^xsd:string ;
+  :dataNascimento_aluno "1997-9-4"^^xsd:string ;
+  :id_aluno "A23916"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB3> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38222
+<http://rpcw.di.uminho.pt/2024/music#A38222> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE LUIS CARDOSO SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2002-8-4"^^xsd:string ;
+  :id_aluno "A38222"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS17> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38205
+<http://rpcw.di.uminho.pt/2024/music#A38205> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE LUIS LOPES DE ARAUJO"^^xsd:string ;
+  :dataNascimento_aluno "1996-2-19"^^xsd:string ;
+  :id_aluno "A38205"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB3> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A27629
+<http://rpcw.di.uminho.pt/2024/music#A27629> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE LUIS PINTO MONTEIRO ALVES"^^xsd:string ;
+  :dataNascimento_aluno "2002-8-25"^^xsd:string ;
+  :id_aluno "A27629"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS22> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38206
+<http://rpcw.di.uminho.pt/2024/music#A38206> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE MANUEL ARAUJO SOARES"^^xsd:string ;
+  :dataNascimento_aluno "2005-4-11"^^xsd:string ;
+  :id_aluno "A38206"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS9> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35398
+<http://rpcw.di.uminho.pt/2024/music#A35398> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE MANUEL ESTEVES"^^xsd:string ;
+  :dataNascimento_aluno "2005-10-19"^^xsd:string ;
+  :id_aluno "A35398"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS6> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A32480
+<http://rpcw.di.uminho.pt/2024/music#A32480> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE MANUEL LIMA GANDARELA"^^xsd:string ;
+  :dataNascimento_aluno "1999-5-10"^^xsd:string ;
+  :id_aluno "A32480"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB10> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30213
+<http://rpcw.di.uminho.pt/2024/music#A30213> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE MANUEL LOUREIRO DE AZEVEDO TEIXEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2001-1-4"^^xsd:string ;
+  :id_aluno "A30213"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB16> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A22670
+<http://rpcw.di.uminho.pt/2024/music#A22670> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE MANUEL TEIXEIRA FERNANDES"^^xsd:string ;
+  :dataNascimento_aluno "1999-10-28"^^xsd:string ;
+  :id_aluno "A22670"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB1> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33182
+<http://rpcw.di.uminho.pt/2024/music#A33182> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE MIGUEL DOS SANTOS FERRAZ"^^xsd:string ;
+  :dataNascimento_aluno "2005-8-14"^^xsd:string ;
+  :id_aluno "A33182"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS18> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A28722
+<http://rpcw.di.uminho.pt/2024/music#A28722> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE MIGUEL FERREIRA PONTES"^^xsd:string ;
+  :dataNascimento_aluno "2003-10-26"^^xsd:string ;
+  :id_aluno "A28722"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS3> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38121
+<http://rpcw.di.uminho.pt/2024/music#A38121> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE MIGUEL RODRIGUES OLIVEIRA DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2003-1-26"^^xsd:string ;
+  :id_aluno "A38121"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS9> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35334
+<http://rpcw.di.uminho.pt/2024/music#A35334> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE MIGUEL SILVA PEIXOTO DE CARVALHO"^^xsd:string ;
+  :dataNascimento_aluno "2001-9-20"^^xsd:string ;
+  :id_aluno "A35334"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB19> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38136
+<http://rpcw.di.uminho.pt/2024/music#A38136> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE NUNO MARTINS PINTO FRAGA"^^xsd:string ;
+  :dataNascimento_aluno "1998-6-7"^^xsd:string ;
+  :id_aluno "A38136"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35335
+<http://rpcw.di.uminho.pt/2024/music#A35335> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE PAULO CARNEIRO DE MELO MAMEDE"^^xsd:string ;
+  :dataNascimento_aluno "1996-9-26"^^xsd:string ;
+  :id_aluno "A35335"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB1> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35337
+<http://rpcw.di.uminho.pt/2024/music#A35337> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE PEDRO DOMINGUES"^^xsd:string ;
+  :dataNascimento_aluno "2003-12-11"^^xsd:string ;
+  :id_aluno "A35337"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS6> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38142
+<http://rpcw.di.uminho.pt/2024/music#A38142> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE PEDRO FARIA E VASCONCELOS CORREIA"^^xsd:string ;
+  :dataNascimento_aluno "1996-12-15"^^xsd:string ;
+  :id_aluno "A38142"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38140
+<http://rpcw.di.uminho.pt/2024/music#A38140> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE PEDRO MACHADO GOMES"^^xsd:string ;
+  :dataNascimento_aluno "2002-9-5"^^xsd:string ;
+  :id_aluno "A38140"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS14> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38137
+<http://rpcw.di.uminho.pt/2024/music#A38137> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE PEDRO RIBEIRO DA ARAUJO"^^xsd:string ;
+  :dataNascimento_aluno "2000-2-23"^^xsd:string ;
+  :id_aluno "A38137"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38128
+<http://rpcw.di.uminho.pt/2024/music#A38128> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE PEDRO RODRIGUES MAGALHAES"^^xsd:string ;
+  :dataNascimento_aluno "2005-6-13"^^xsd:string ;
+  :id_aluno "A38128"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS4> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30214
+<http://rpcw.di.uminho.pt/2024/music#A30214> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE PEDRO SILVA DE OLIVEIRA CARVALHO"^^xsd:string ;
+  :dataNascimento_aluno "2001-3-15"^^xsd:string ;
+  :id_aluno "A30214"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB12> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A23508
+<http://rpcw.di.uminho.pt/2024/music#A23508> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOSE ROMEU FERNANDES PINTO"^^xsd:string ;
+  :dataNascimento_aluno "1998-4-7"^^xsd:string ;
+  :id_aluno "A23508"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB15> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38155
+<http://rpcw.di.uminho.pt/2024/music#A38155> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JULIO ANDRE RODRIGUES ARAUJO"^^xsd:string ;
+  :dataNascimento_aluno "1996-9-16"^^xsd:string ;
+  :id_aluno "A38155"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB12> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35843
+<http://rpcw.di.uminho.pt/2024/music#A35843> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LARA SOFIA ALPOIM MIRANDA"^^xsd:string ;
+  :dataNascimento_aluno "2002-3-9"^^xsd:string ;
+  :id_aluno "A35843"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS19> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38150
+<http://rpcw.di.uminho.pt/2024/music#A38150> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LEANDRO EMANUEL DA SILVA SALGADO BARBOSA"^^xsd:string ;
+  :dataNascimento_aluno "1999-4-27"^^xsd:string ;
+  :id_aluno "A38150"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A34035
+<http://rpcw.di.uminho.pt/2024/music#A34035> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LEONOR ISABEL CONSTANTINO CAEIRO BOGA"^^xsd:string ;
+  :dataNascimento_aluno "2005-2-27"^^xsd:string ;
+  :id_aluno "A34035"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS9> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A24839
+<http://rpcw.di.uminho.pt/2024/music#A24839> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LEONOR ISABEL FERREIRA DE MELO OSORIO ARAUJO"^^xsd:string ;
+  :dataNascimento_aluno "2003-12-16"^^xsd:string ;
+  :id_aluno "A24839"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS5> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35339
+<http://rpcw.di.uminho.pt/2024/music#A35339> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LIDIA NOGUEIRA LARANJEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2004-6-23"^^xsd:string ;
+  :id_aluno "A35339"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS2> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35340
+<http://rpcw.di.uminho.pt/2024/music#A35340> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LILIANA SOLANGE SEQUEIRA HENRIQUES DE MACEDO"^^xsd:string ;
+  :dataNascimento_aluno "1999-2-22"^^xsd:string ;
+  :id_aluno "A35340"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33650
+<http://rpcw.di.uminho.pt/2024/music#A33650> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIS ANDRE DA CUNHA MARQUES"^^xsd:string ;
+  :dataNascimento_aluno "2000-7-24"^^xsd:string ;
+  :id_aluno "A33650"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB16> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35342
+<http://rpcw.di.uminho.pt/2024/music#A35342> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIS CARLOS GONCALO LEONARDO"^^xsd:string ;
+  :dataNascimento_aluno "2002-2-20"^^xsd:string ;
+  :id_aluno "A35342"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS14> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38223
+<http://rpcw.di.uminho.pt/2024/music#A38223> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIS DIOGO MONTEIRO DUARTE COUTO"^^xsd:string ;
+  :dataNascimento_aluno "1998-8-13"^^xsd:string ;
+  :id_aluno "A38223"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB3> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39341
+<http://rpcw.di.uminho.pt/2024/music#A39341> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIS FERNANDO ROMANEL RODRIGUES"^^xsd:string ;
+  :dataNascimento_aluno "2003-11-28"^^xsd:string ;
+  :id_aluno "A39341"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39408
+<http://rpcw.di.uminho.pt/2024/music#A39408> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIS FILIPE FARIA MONTEIRO CAPELO"^^xsd:string ;
+  :dataNascimento_aluno "2000-3-16"^^xsd:string ;
+  :id_aluno "A39408"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB7> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33186
+<http://rpcw.di.uminho.pt/2024/music#A33186> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIS FILIPE GAMA PAIS CABRAL"^^xsd:string ;
+  :dataNascimento_aluno "2002-8-10"^^xsd:string ;
+  :id_aluno "A33186"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS10> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38219
+<http://rpcw.di.uminho.pt/2024/music#A38219> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIS FILIPE PEREIRA GONCALVES"^^xsd:string ;
+  :dataNascimento_aluno "2005-11-4"^^xsd:string ;
+  :id_aluno "A38219"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS18> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A29631
+<http://rpcw.di.uminho.pt/2024/music#A29631> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIS FILIPE RIBEIRO NOVAIS"^^xsd:string ;
+  :dataNascimento_aluno "2001-6-19"^^xsd:string ;
+  :id_aluno "A29631"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39747
+<http://rpcw.di.uminho.pt/2024/music#A39747> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIS PEDRO FERREIRA LEITE DOS SANTOS ALEIXO"^^xsd:string ;
+  :dataNascimento_aluno "2005-5-19"^^xsd:string ;
+  :id_aluno "A39747"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS10> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33188
+<http://rpcw.di.uminho.pt/2024/music#A33188> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIS PEDRO LOPES PEREIRA"^^xsd:string ;
+  :dataNascimento_aluno "2002-3-12"^^xsd:string ;
+  :id_aluno "A33188"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS15> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38172
+<http://rpcw.di.uminho.pt/2024/music#A38172> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIS TIAGO AFONSO MASCARENHAS"^^xsd:string ;
+  :dataNascimento_aluno "2000-2-21"^^xsd:string ;
+  :id_aluno "A38172"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB1> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38168
+<http://rpcw.di.uminho.pt/2024/music#A38168> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "LUIZ ALBERTO DE CASTRO SANTOS"^^xsd:string ;
+  :dataNascimento_aluno "2005-8-2"^^xsd:string ;
+  :id_aluno "A38168"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38254
+<http://rpcw.di.uminho.pt/2024/music#A38254> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MANUEL DOMINGOS DE CARVALHO FELGUEIRAS DA SILVA SANTOS"^^xsd:string ;
+  :dataNascimento_aluno "2001-4-27"^^xsd:string ;
+  :id_aluno "A38254"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB16> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30219
+<http://rpcw.di.uminho.pt/2024/music#A30219> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MANUEL FERNANDO SOTO MAIOR FRANQUEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2001-3-16"^^xsd:string ;
+  :id_aluno "A30219"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB4> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35348
+<http://rpcw.di.uminho.pt/2024/music#A35348> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MANUEL JOSE GOMES MEIRELES"^^xsd:string ;
+  :dataNascimento_aluno "2002-2-24"^^xsd:string ;
+  :id_aluno "A35348"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A27637
+<http://rpcw.di.uminho.pt/2024/music#A27637> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MANUEL JOSE TORRES SOUSA DA CUNHA"^^xsd:string ;
+  :dataNascimento_aluno "1999-12-22"^^xsd:string ;
+  :id_aluno "A27637"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB18> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A29004
+<http://rpcw.di.uminho.pt/2024/music#A29004> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARANGAZE JOAQUIM MUNHEPE MULHANGA"^^xsd:string ;
+  :dataNascimento_aluno "1999-4-22"^^xsd:string ;
+  :id_aluno "A29004"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB1> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35349
+<http://rpcw.di.uminho.pt/2024/music#A35349> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARCIA MARLENE DE ALMEIDA MARTINS"^^xsd:string ;
+  :dataNascimento_aluno "1997-1-26"^^xsd:string ;
+  :id_aluno "A35349"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB6> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35350
+<http://rpcw.di.uminho.pt/2024/music#A35350> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARCIAL COELHO GOMES"^^xsd:string ;
+  :dataNascimento_aluno "1996-11-20"^^xsd:string ;
+  :id_aluno "A35350"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39406
+<http://rpcw.di.uminho.pt/2024/music#A39406> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARCO ALEXANDRE AGUIAR VAZ"^^xsd:string ;
+  :dataNascimento_aluno "2003-6-22"^^xsd:string ;
+  :id_aluno "A39406"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A29011
+<http://rpcw.di.uminho.pt/2024/music#A29011> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARCO ALEXANDRE BARREIRA MEDEIROS TEIXEIRA"^^xsd:string ;
+  :dataNascimento_aluno "1998-12-22"^^xsd:string ;
+  :id_aluno "A29011"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38178
+<http://rpcw.di.uminho.pt/2024/music#A38178> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARCO ALEXANDRE TEIXEIRA PALOS"^^xsd:string ;
+  :dataNascimento_aluno "1999-6-9"^^xsd:string ;
+  :id_aluno "A38178"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38152
+<http://rpcw.di.uminho.pt/2024/music#A38152> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARCO ANTONIO SAMPAIO FREITAS DE CASTRO"^^xsd:string ;
+  :dataNascimento_aluno "2005-5-14"^^xsd:string ;
+  :id_aluno "A38152"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS16> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38179
+<http://rpcw.di.uminho.pt/2024/music#A38179> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARCO ANTONIO TEIXEIRA MARTINS"^^xsd:string ;
+  :dataNascimento_aluno "2003-11-13"^^xsd:string ;
+  :id_aluno "A38179"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS15> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A22685
+<http://rpcw.di.uminho.pt/2024/music#A22685> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARCO FRANCISCO DA SILVA LIZARDO"^^xsd:string ;
+  :dataNascimento_aluno "2004-8-28"^^xsd:string ;
+  :id_aluno "A22685"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS12> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A22688
+<http://rpcw.di.uminho.pt/2024/music#A22688> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARCO RICARDO BARBOSA COELHO"^^xsd:string ;
+  :dataNascimento_aluno "2001-4-3"^^xsd:string ;
+  :id_aluno "A22688"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB8> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36864
+<http://rpcw.di.uminho.pt/2024/music#A36864> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARIA BEATRIZ ALVES DE SA CAMPOS"^^xsd:string ;
+  :dataNascimento_aluno "2003-7-19"^^xsd:string ;
+  :id_aluno "A36864"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS11> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38184
+<http://rpcw.di.uminho.pt/2024/music#A38184> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARIA CRISTINA CARNEIRO BARREIRA"^^xsd:string ;
+  :dataNascimento_aluno "2005-10-1"^^xsd:string ;
+  :id_aluno "A38184"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS7> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A12753
+<http://rpcw.di.uminho.pt/2024/music#A12753> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARIA LUISA VILLAVERDE MACHADO FERNANDES NOVAIS"^^xsd:string ;
+  :dataNascimento_aluno "1998-3-8"^^xsd:string ;
+  :id_aluno "A12753"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB16> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38161
+<http://rpcw.di.uminho.pt/2024/music#A38161> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARIANA PEREIRA NEVES"^^xsd:string ;
+  :dataNascimento_aluno "2002-6-24"^^xsd:string ;
+  :id_aluno "A38161"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS4> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38171
+<http://rpcw.di.uminho.pt/2024/music#A38171> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARIO ANDRE PATRICIO TEIXEIRA JULIO"^^xsd:string ;
+  :dataNascimento_aluno "2005-12-22"^^xsd:string ;
+  :id_aluno "A38171"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS22> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38194
+<http://rpcw.di.uminho.pt/2024/music#A38194> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARIO DA FONTE LAMEIRAS"^^xsd:string ;
+  :dataNascimento_aluno "1999-7-23"^^xsd:string ;
+  :id_aluno "A38194"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB11> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A23544
+<http://rpcw.di.uminho.pt/2024/music#A23544> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARIO RUI ANUNCIACAO MONTEIRO"^^xsd:string ;
+  :dataNascimento_aluno "2000-3-12"^^xsd:string ;
+  :id_aluno "A23544"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB3> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A29048
+<http://rpcw.di.uminho.pt/2024/music#A29048> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MARIO RUI RIBEIRO FIALHO DA CONCEICAO"^^xsd:string ;
+  :dataNascimento_aluno "1996-2-14"^^xsd:string ;
+  :id_aluno "A29048"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36454
+<http://rpcw.di.uminho.pt/2024/music#A36454> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MICHEL FERREIRA PINTO"^^xsd:string ;
+  :dataNascimento_aluno "1999-4-17"^^xsd:string ;
+  :id_aluno "A36454"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB15> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35352
+<http://rpcw.di.uminho.pt/2024/music#A35352> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MIGUEL AFONSO PIRES DA ROSA"^^xsd:string ;
+  :dataNascimento_aluno "2001-4-14"^^xsd:string ;
+  :id_aluno "A35352"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB8> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38217
+<http://rpcw.di.uminho.pt/2024/music#A38217> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MIGUEL ANGELO MARQUES DE MATOS"^^xsd:string ;
+  :dataNascimento_aluno "2001-4-13"^^xsd:string ;
+  :id_aluno "A38217"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB8> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38209
+<http://rpcw.di.uminho.pt/2024/music#A38209> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MIGUEL ANGELO PINTO MARQUES"^^xsd:string ;
+  :dataNascimento_aluno "2005-9-24"^^xsd:string ;
+  :id_aluno "A38209"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS17> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30226
+<http://rpcw.di.uminho.pt/2024/music#A30226> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MIGUEL ANGELO RIBEIRO DE SOUSA E SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2002-3-12"^^xsd:string ;
+  :id_aluno "A30226"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS3> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38221
+<http://rpcw.di.uminho.pt/2024/music#A38221> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MIGUEL ANGELO VIVAS GOMES ALVES"^^xsd:string ;
+  :dataNascimento_aluno "1996-2-13"^^xsd:string ;
+  :id_aluno "A38221"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB13> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A21432
+<http://rpcw.di.uminho.pt/2024/music#A21432> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MIGUEL MANUEL GOMES RODRIGUES"^^xsd:string ;
+  :dataNascimento_aluno "2004-12-14"^^xsd:string ;
+  :id_aluno "A21432"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS9> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39342
+<http://rpcw.di.uminho.pt/2024/music#A39342> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MIGUEL PEDRO AMARAL FIGUEIREDO"^^xsd:string ;
+  :dataNascimento_aluno "2001-11-27"^^xsd:string ;
+  :id_aluno "A39342"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A32608
+<http://rpcw.di.uminho.pt/2024/music#A32608> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MIGUEL PEDRO DE ALMEIDA FERREIRA CORREIA DOURADO"^^xsd:string ;
+  :dataNascimento_aluno "2000-7-17"^^xsd:string ;
+  :id_aluno "A32608"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB19> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33195
+<http://rpcw.di.uminho.pt/2024/music#A33195> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "MIGUEL PINTO DE SOUSA MARQUES"^^xsd:string ;
+  :dataNascimento_aluno "2004-10-18"^^xsd:string ;
+  :id_aluno "A33195"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS16> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A22695
+<http://rpcw.di.uminho.pt/2024/music#A22695> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NANCY DO SAMEIRO SILVERIO LAVANDEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2004-6-23"^^xsd:string ;
+  :id_aluno "A22695"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS5> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38216
+<http://rpcw.di.uminho.pt/2024/music#A38216> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NELSON DE SOUSA E SILVA"^^xsd:string ;
+  :dataNascimento_aluno "1997-4-19"^^xsd:string ;
+  :id_aluno "A38216"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB13> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33196
+<http://rpcw.di.uminho.pt/2024/music#A33196> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NELSON FILIPE COELHO DE MOURA SOUSA"^^xsd:string ;
+  :dataNascimento_aluno "2004-5-24"^^xsd:string ;
+  :id_aluno "A33196"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33420
+<http://rpcw.di.uminho.pt/2024/music#A33420> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NELSON LEANDRO BARBOSA CARNEIRO"^^xsd:string ;
+  :dataNascimento_aluno "2000-11-19"^^xsd:string ;
+  :id_aluno "A33420"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38195
+<http://rpcw.di.uminho.pt/2024/music#A38195> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NELSON TAVARES CUNHA"^^xsd:string ;
+  :dataNascimento_aluno "2005-10-12"^^xsd:string ;
+  :id_aluno "A38195"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS12> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33727
+<http://rpcw.di.uminho.pt/2024/music#A33727> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO FILIPE ANTUNES DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "1999-5-13"^^xsd:string ;
+  :id_aluno "A33727"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33127
+<http://rpcw.di.uminho.pt/2024/music#A33127> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO FILIPE MAGALHAES SANTOS"^^xsd:string ;
+  :dataNascimento_aluno "1996-10-16"^^xsd:string ;
+  :id_aluno "A33127"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB19> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A24784
+<http://rpcw.di.uminho.pt/2024/music#A24784> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO FILIPE MARQUES MOREIRA RIBEIRO"^^xsd:string ;
+  :dataNascimento_aluno "1996-12-9"^^xsd:string ;
+  :id_aluno "A24784"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB17> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38208
+<http://rpcw.di.uminho.pt/2024/music#A38208> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO GONCALO BETTENCOURT DA CRUZ CORREIA"^^xsd:string ;
+  :dataNascimento_aluno "1997-8-27"^^xsd:string ;
+  :id_aluno "A38208"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB1> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38203
+<http://rpcw.di.uminho.pt/2024/music#A38203> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO JORGE FERREIRA GUIMARAES"^^xsd:string ;
+  :dataNascimento_aluno "2003-6-23"^^xsd:string ;
+  :id_aluno "A38203"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS9> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A15619
+<http://rpcw.di.uminho.pt/2024/music#A15619> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO MIGUEL AFONSO CARVALHO DE MOURA"^^xsd:string ;
+  :dataNascimento_aluno "2002-5-18"^^xsd:string ;
+  :id_aluno "A15619"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS2> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35355
+<http://rpcw.di.uminho.pt/2024/music#A35355> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO MIGUEL MACHADO ALVES COSTA"^^xsd:string ;
+  :dataNascimento_aluno "1998-5-8"^^xsd:string ;
+  :id_aluno "A35355"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB16> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33437
+<http://rpcw.di.uminho.pt/2024/music#A33437> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO MIGUEL MARQUES GOMES"^^xsd:string ;
+  :dataNascimento_aluno "2000-10-3"^^xsd:string ;
+  :id_aluno "A33437"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A22701
+<http://rpcw.di.uminho.pt/2024/music#A22701> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO MIGUEL MARTINS CASANOVA"^^xsd:string ;
+  :dataNascimento_aluno "1996-1-17"^^xsd:string ;
+  :id_aluno "A22701"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A27645
+<http://rpcw.di.uminho.pt/2024/music#A27645> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO MIGUEL OLIVEIRA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "1997-7-13"^^xsd:string ;
+  :id_aluno "A27645"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB3> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A29282
+<http://rpcw.di.uminho.pt/2024/music#A29282> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO VIRIATO MACEDO FERREIRA DE CARVALHO"^^xsd:string ;
+  :dataNascimento_aluno "1999-11-1"^^xsd:string ;
+  :id_aluno "A29282"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB4> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38120
+<http://rpcw.di.uminho.pt/2024/music#A38120> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "OCTAVIO DAVID DA CONCEICAO JACINTO"^^xsd:string ;
+  :dataNascimento_aluno "2004-10-17"^^xsd:string ;
+  :id_aluno "A38120"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS11> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A14539
+<http://rpcw.di.uminho.pt/2024/music#A14539> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ORLANDO JORGE GONCALVES PINTO"^^xsd:string ;
+  :dataNascimento_aluno "2000-10-6"^^xsd:string ;
+  :id_aluno "A14539"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB16> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33280
+<http://rpcw.di.uminho.pt/2024/music#A33280> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PAULO BRUNO DA SILVA VIDES FERNANDES"^^xsd:string ;
+  :dataNascimento_aluno "2001-2-7"^^xsd:string ;
+  :id_aluno "A33280"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB14> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A34508
+<http://rpcw.di.uminho.pt/2024/music#A34508> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PAULO CESAR ALMEIDA DE SA"^^xsd:string ;
+  :dataNascimento_aluno "2004-9-6"^^xsd:string ;
+  :id_aluno "A34508"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS9> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A27577
+<http://rpcw.di.uminho.pt/2024/music#A27577> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PAULO CESAR DE CARVALHO LOPES"^^xsd:string ;
+  :dataNascimento_aluno "1996-7-18"^^xsd:string ;
+  :id_aluno "A27577"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB11> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39938
+<http://rpcw.di.uminho.pt/2024/music#A39938> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PAULO CESAR ROMANEL RODRIGUES"^^xsd:string ;
+  :dataNascimento_aluno "1997-11-15"^^xsd:string ;
+  :id_aluno "A39938"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33204
+<http://rpcw.di.uminho.pt/2024/music#A33204> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PAULO EDUARDO MIRANDA CAMPOS"^^xsd:string ;
+  :dataNascimento_aluno "2003-2-23"^^xsd:string ;
+  :id_aluno "A33204"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38122
+<http://rpcw.di.uminho.pt/2024/music#A38122> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PAULO JORGE ASSIS DE SOUSA"^^xsd:string ;
+  :dataNascimento_aluno "2002-10-10"^^xsd:string ;
+  :id_aluno "A38122"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS19> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35357
+<http://rpcw.di.uminho.pt/2024/music#A35357> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PAULO JORGE FERNANDES DE SOUSA"^^xsd:string ;
+  :dataNascimento_aluno "2004-5-18"^^xsd:string ;
+  :id_aluno "A35357"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS2> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30238
+<http://rpcw.di.uminho.pt/2024/music#A30238> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PAULO JORGE SOARES MENDES"^^xsd:string ;
+  :dataNascimento_aluno "2003-11-21"^^xsd:string ;
+  :id_aluno "A30238"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS21> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39407
+<http://rpcw.di.uminho.pt/2024/music#A39407> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PAULO MANUEL RIBEIRO NOVAIS"^^xsd:string ;
+  :dataNascimento_aluno "2003-12-24"^^xsd:string ;
+  :id_aluno "A39407"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS10> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33209
+<http://rpcw.di.uminho.pt/2024/music#A33209> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PAULO MIGUEL SA MORAIS PIRES"^^xsd:string ;
+  :dataNascimento_aluno "2001-8-7"^^xsd:string ;
+  :id_aluno "A33209"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB1> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36476
+<http://rpcw.di.uminho.pt/2024/music#A36476> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO ALEXANDRE FERREIRA VILACA"^^xsd:string ;
+  :dataNascimento_aluno "1998-10-27"^^xsd:string ;
+  :id_aluno "A36476"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB1> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35360
+<http://rpcw.di.uminho.pt/2024/music#A35360> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO DANIEL FERREIRA DE CARVALHO"^^xsd:string ;
+  :dataNascimento_aluno "2001-9-24"^^xsd:string ;
+  :id_aluno "A35360"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB20> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A21711
+<http://rpcw.di.uminho.pt/2024/music#A21711> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO DAVID ALVES MARTINHO"^^xsd:string ;
+  :dataNascimento_aluno "1999-9-27"^^xsd:string ;
+  :id_aluno "A21711"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A32652
+<http://rpcw.di.uminho.pt/2024/music#A32652> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO DUARTE CARDOSO LOPES"^^xsd:string ;
+  :dataNascimento_aluno "2005-9-18"^^xsd:string ;
+  :id_aluno "A32652"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS15> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36969
+<http://rpcw.di.uminho.pt/2024/music#A36969> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO EMANUEL FERNANDES LOPES"^^xsd:string ;
+  :dataNascimento_aluno "2005-6-16"^^xsd:string ;
+  :id_aluno "A36969"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS17> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33213
+<http://rpcw.di.uminho.pt/2024/music#A33213> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO GUIMARAES DE FREITAS"^^xsd:string ;
+  :dataNascimento_aluno "2005-4-14"^^xsd:string ;
+  :id_aluno "A33213"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS6> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30241
+<http://rpcw.di.uminho.pt/2024/music#A30241> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO HENRIQUE GONCALVES GERAZ RODRIGUES"^^xsd:string ;
+  :dataNascimento_aluno "1999-6-1"^^xsd:string ;
+  :id_aluno "A30241"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB6> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33214
+<http://rpcw.di.uminho.pt/2024/music#A33214> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO JORGE OSORIO MARINHO OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "1996-10-6"^^xsd:string ;
+  :id_aluno "A33214"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38116
+<http://rpcw.di.uminho.pt/2024/music#A38116> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO JOSE MARTINS FARIA"^^xsd:string ;
+  :dataNascimento_aluno "2003-3-11"^^xsd:string ;
+  :id_aluno "A38116"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS16> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35144
+<http://rpcw.di.uminho.pt/2024/music#A35144> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MANUEL DE AMORIM MAGALHAES"^^xsd:string ;
+  :dataNascimento_aluno "1997-8-25"^^xsd:string ;
+  :id_aluno "A35144"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB17> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38118
+<http://rpcw.di.uminho.pt/2024/music#A38118> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MANUEL LOPES PATRICIO"^^xsd:string ;
+  :dataNascimento_aluno "2000-9-21"^^xsd:string ;
+  :id_aluno "A38118"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB1> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A27658
+<http://rpcw.di.uminho.pt/2024/music#A27658> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MIGUEL ARAUJO MOTA LOPES"^^xsd:string ;
+  :dataNascimento_aluno "2002-1-20"^^xsd:string ;
+  :id_aluno "A27658"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS3> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I3> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38159
+<http://rpcw.di.uminho.pt/2024/music#A38159> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MIGUEL AZEVEDO DE OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2005-6-21"^^xsd:string ;
+  :id_aluno "A38159"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS1> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35363
+<http://rpcw.di.uminho.pt/2024/music#A35363> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MIGUEL DA SILVA ARAUJO"^^xsd:string ;
+  :dataNascimento_aluno "1998-2-14"^^xsd:string ;
+  :id_aluno "A35363"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB11> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A25383
+<http://rpcw.di.uminho.pt/2024/music#A25383> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MIGUEL MARTINS FERNANDES"^^xsd:string ;
+  :dataNascimento_aluno "1997-3-8"^^xsd:string ;
+  :id_aluno "A25383"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB12> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35364
+<http://rpcw.di.uminho.pt/2024/music#A35364> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MIGUEL MEIRA DAS NEVES"^^xsd:string ;
+  :dataNascimento_aluno "2000-8-16"^^xsd:string ;
+  :id_aluno "A35364"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB7> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33524
+<http://rpcw.di.uminho.pt/2024/music#A33524> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MIGUEL PAES MACHADO"^^xsd:string ;
+  :dataNascimento_aluno "2004-10-3"^^xsd:string ;
+  :id_aluno "A33524"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS13> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35855
+<http://rpcw.di.uminho.pt/2024/music#A35855> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MIGUEL PINTO RIBEIRO"^^xsd:string ;
+  :dataNascimento_aluno "2001-3-24"^^xsd:string ;
+  :id_aluno "A35855"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB6> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38147
+<http://rpcw.di.uminho.pt/2024/music#A38147> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MIGUEL RAMOS MADEIRA"^^xsd:string ;
+  :dataNascimento_aluno "1997-3-22"^^xsd:string ;
+  :id_aluno "A38147"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB19> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33281
+<http://rpcw.di.uminho.pt/2024/music#A33281> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MIGUEL SOARES PINTO"^^xsd:string ;
+  :dataNascimento_aluno "2000-2-11"^^xsd:string ;
+  :id_aluno "A33281"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30243
+<http://rpcw.di.uminho.pt/2024/music#A30243> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO MIGUEL VEIGA DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "1999-2-24"^^xsd:string ;
+  :id_aluno "A30243"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB15> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I15> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38149
+<http://rpcw.di.uminho.pt/2024/music#A38149> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO SILVESTRE MENESES MAGALHAES COELHO"^^xsd:string ;
+  :dataNascimento_aluno "2003-2-8"^^xsd:string ;
+  :id_aluno "A38149"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38160
+<http://rpcw.di.uminho.pt/2024/music#A38160> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO TIAGO AMORIM DE BRITO"^^xsd:string ;
+  :dataNascimento_aluno "2002-3-7"^^xsd:string ;
+  :id_aluno "A38160"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS17> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33082
+<http://rpcw.di.uminho.pt/2024/music#A33082> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "PEDRO TIAGO DIAS GONCALVES"^^xsd:string ;
+  :dataNascimento_aluno "1996-4-27"^^xsd:string ;
+  :id_aluno "A33082"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB20> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38154
+<http://rpcw.di.uminho.pt/2024/music#A38154> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RAFAEL DE CASTRO CARREIRA"^^xsd:string ;
+  :dataNascimento_aluno "1998-1-22"^^xsd:string ;
+  :id_aluno "A38154"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38158
+<http://rpcw.di.uminho.pt/2024/music#A38158> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RAUL GRACIANO OLIVEIRA RODRIGUES"^^xsd:string ;
+  :dataNascimento_aluno "1996-7-1"^^xsd:string ;
+  :id_aluno "A38158"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30015
+<http://rpcw.di.uminho.pt/2024/music#A30015> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RENATO CESAR ALMEIDA FIGUEIREDO"^^xsd:string ;
+  :dataNascimento_aluno "2002-10-17"^^xsd:string ;
+  :id_aluno "A30015"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS11> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39509
+<http://rpcw.di.uminho.pt/2024/music#A39509> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RICARDO ANDRE RODRIGUES AFONSO"^^xsd:string ;
+  :dataNascimento_aluno "1997-4-17"^^xsd:string ;
+  :id_aluno "A39509"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB10> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38153
+<http://rpcw.di.uminho.pt/2024/music#A38153> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RICARDO ARAUJO CARVALHO VILACA MOREIRA"^^xsd:string ;
+  :dataNascimento_aluno "1996-2-22"^^xsd:string ;
+  :id_aluno "A38153"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB7> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38151
+<http://rpcw.di.uminho.pt/2024/music#A38151> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RICARDO FERNANDO LIRA DE MESQUITA LACHADO"^^xsd:string ;
+  :dataNascimento_aluno "2001-4-5"^^xsd:string ;
+  :id_aluno "A38151"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB11> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38129
+<http://rpcw.di.uminho.pt/2024/music#A38129> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RICARDO GOMES DE FARIA"^^xsd:string ;
+  :dataNascimento_aluno "2003-10-8"^^xsd:string ;
+  :id_aluno "A38129"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS11> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33222
+<http://rpcw.di.uminho.pt/2024/music#A33222> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RICARDO JORGE ALMEIDA DE MAGALHAES"^^xsd:string ;
+  :dataNascimento_aluno "1997-7-10"^^xsd:string ;
+  :id_aluno "A33222"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB4> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38130
+<http://rpcw.di.uminho.pt/2024/music#A38130> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RICARDO JORGE RODRIGUES SEPULVEDA MARQUES"^^xsd:string ;
+  :dataNascimento_aluno "2004-10-21"^^xsd:string ;
+  :id_aluno "A38130"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS9> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A34435
+<http://rpcw.di.uminho.pt/2024/music#A34435> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RICARDO JOSE FERREIRA DIAS DE OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "1998-8-15"^^xsd:string ;
+  :id_aluno "A34435"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB18> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A19550
+<http://rpcw.di.uminho.pt/2024/music#A19550> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RICARDO MANUEL RODRIGUES DE OLIVEIRA DIMAS"^^xsd:string ;
+  :dataNascimento_aluno "1997-11-5"^^xsd:string ;
+  :id_aluno "A19550"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB20> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35366
+<http://rpcw.di.uminho.pt/2024/music#A35366> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RICARDO MANUEL VIANA MAGALHAES"^^xsd:string ;
+  :dataNascimento_aluno "1996-6-14"^^xsd:string ;
+  :id_aluno "A35366"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB5> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A22721
+<http://rpcw.di.uminho.pt/2024/music#A22721> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RICARDO NUNO MOREIRA CASTILHO FERREIRA LOPES"^^xsd:string ;
+  :dataNascimento_aluno "2003-12-20"^^xsd:string ;
+  :id_aluno "A22721"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS22> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30254
+<http://rpcw.di.uminho.pt/2024/music#A30254> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ROQUE MANUEL DE CARVALHO TEIXEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2001-2-27"^^xsd:string ;
+  :id_aluno "A30254"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB20> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A18770
+<http://rpcw.di.uminho.pt/2024/music#A18770> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "ROSA ALEXANDRA AZEVEDO GUIMARAES"^^xsd:string ;
+  :dataNascimento_aluno "2004-9-2"^^xsd:string ;
+  :id_aluno "A18770"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS14> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38141
+<http://rpcw.di.uminho.pt/2024/music#A38141> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUBEN FILIPE CARDOSO DA FONSECA"^^xsd:string ;
+  :dataNascimento_aluno "1999-10-20"^^xsd:string ;
+  :id_aluno "A38141"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB19> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38200
+<http://rpcw.di.uminho.pt/2024/music#A38200> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI ALEXANDRE SERRANO DE MOURA"^^xsd:string ;
+  :dataNascimento_aluno "2003-12-14"^^xsd:string ;
+  :id_aluno "A38200"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS20> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36764
+<http://rpcw.di.uminho.pt/2024/music#A36764> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI ANDRE FERREIRA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2002-12-8"^^xsd:string ;
+  :id_aluno "A36764"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS2> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38135
+<http://rpcw.di.uminho.pt/2024/music#A38135> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI ANDRE LEITE RIBEIRO"^^xsd:string ;
+  :dataNascimento_aluno "1997-10-2"^^xsd:string ;
+  :id_aluno "A38135"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB20> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39944
+<http://rpcw.di.uminho.pt/2024/music#A39944> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI ANTONIO PEIXOTO DE ABREU"^^xsd:string ;
+  :dataNascimento_aluno "2000-5-25"^^xsd:string ;
+  :id_aluno "A39944"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38148
+<http://rpcw.di.uminho.pt/2024/music#A38148> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI DOMINGOS GUIMARAES SALGADO"^^xsd:string ;
+  :dataNascimento_aluno "1997-4-27"^^xsd:string ;
+  :id_aluno "A38148"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB4> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33228
+<http://rpcw.di.uminho.pt/2024/music#A33228> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI FILIPE BARROS TAVARES"^^xsd:string ;
+  :dataNascimento_aluno "1996-6-20"^^xsd:string ;
+  :id_aluno "A33228"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB16> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38146
+<http://rpcw.di.uminho.pt/2024/music#A38146> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI FILIPE TORRES ALEXANDRE"^^xsd:string ;
+  :dataNascimento_aluno "1999-6-8"^^xsd:string ;
+  :id_aluno "A38146"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB18> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38908
+<http://rpcw.di.uminho.pt/2024/music#A38908> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI JORGE DE OLIVEIRA PEREIRA"^^xsd:string ;
+  :dataNascimento_aluno "1996-5-7"^^xsd:string ;
+  :id_aluno "A38908"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB8> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35371
+<http://rpcw.di.uminho.pt/2024/music#A35371> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI JORGE GUIMARAES MACHADO RODRIGUES VALENTE"^^xsd:string ;
+  :dataNascimento_aluno "1999-7-7"^^xsd:string ;
+  :id_aluno "A35371"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A24875
+<http://rpcw.di.uminho.pt/2024/music#A24875> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI MANUEL COUTO DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2005-11-23"^^xsd:string ;
+  :id_aluno "A24875"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS19> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A37029
+<http://rpcw.di.uminho.pt/2024/music#A37029> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI MANUEL DA SILVA PEREIRA NEIVA"^^xsd:string ;
+  :dataNascimento_aluno "1996-12-16"^^xsd:string ;
+  :id_aluno "A37029"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33229
+<http://rpcw.di.uminho.pt/2024/music#A33229> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI MANUEL SILVA OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2000-1-19"^^xsd:string ;
+  :id_aluno "A33229"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB4> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38119
+<http://rpcw.di.uminho.pt/2024/music#A38119> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI MIGUEL DA SILVA ABREU"^^xsd:string ;
+  :dataNascimento_aluno "2005-6-5"^^xsd:string ;
+  :id_aluno "A38119"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS5> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A24876
+<http://rpcw.di.uminho.pt/2024/music#A24876> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI MIGUEL ESCUDEIRO DA COSTA AGUIAR"^^xsd:string ;
+  :dataNascimento_aluno "2000-4-19"^^xsd:string ;
+  :id_aluno "A24876"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB16> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A29253
+<http://rpcw.di.uminho.pt/2024/music#A29253> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI MIGUEL FERNANDES VARELA"^^xsd:string ;
+  :dataNascimento_aluno "1997-2-6"^^xsd:string ;
+  :id_aluno "A29253"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A25868
+<http://rpcw.di.uminho.pt/2024/music#A25868> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI MIGUEL MORAIS LOPES"^^xsd:string ;
+  :dataNascimento_aluno "2001-5-10"^^xsd:string ;
+  :id_aluno "A25868"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A28735
+<http://rpcw.di.uminho.pt/2024/music#A28735> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI MIGUEL NOVAIS CASTRO"^^xsd:string ;
+  :dataNascimento_aluno "2002-6-6"^^xsd:string ;
+  :id_aluno "A28735"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS4> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A27673
+<http://rpcw.di.uminho.pt/2024/music#A27673> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI MIGUEL PEREIRA OLIVEIRA"^^xsd:string ;
+  :dataNascimento_aluno "1999-8-13"^^xsd:string ;
+  :id_aluno "A27673"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB1> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35372
+<http://rpcw.di.uminho.pt/2024/music#A35372> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "RUI PEDRO ANDIAS DUARTE"^^xsd:string ;
+  :dataNascimento_aluno "1997-12-7"^^xsd:string ;
+  :id_aluno "A35372"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB8> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33234
+<http://rpcw.di.uminho.pt/2024/music#A33234> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SANDRA MARIA OLIVEIRA CARVALHO"^^xsd:string ;
+  :dataNascimento_aluno "2000-10-15"^^xsd:string ;
+  :id_aluno "A33234"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB4> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36765
+<http://rpcw.di.uminho.pt/2024/music#A36765> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SANDRA MARIA TELES FEIO ALMEIDA FAZENDEIRO"^^xsd:string ;
+  :dataNascimento_aluno "1997-4-18"^^xsd:string ;
+  :id_aluno "A36765"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38173
+<http://rpcw.di.uminho.pt/2024/music#A38173> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SEBASTIAO MONTEIRO SIMOES"^^xsd:string ;
+  :dataNascimento_aluno "1997-12-1"^^xsd:string ;
+  :id_aluno "A38173"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB11> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I11> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38183
+<http://rpcw.di.uminho.pt/2024/music#A38183> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SERGIO BRANCO AMORIM"^^xsd:string ;
+  :dataNascimento_aluno "1998-1-22"^^xsd:string ;
+  :id_aluno "A38183"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB10> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33235
+<http://rpcw.di.uminho.pt/2024/music#A33235> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SERGIO DE ALMEIDA PAIVA"^^xsd:string ;
+  :dataNascimento_aluno "1997-10-25"^^xsd:string ;
+  :id_aluno "A33235"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB14> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39343
+<http://rpcw.di.uminho.pt/2024/music#A39343> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SERGIO FELICIANO FERREIRA JACOME"^^xsd:string ;
+  :dataNascimento_aluno "2002-10-23"^^xsd:string ;
+  :id_aluno "A39343"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS19> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I19> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39410
+<http://rpcw.di.uminho.pt/2024/music#A39410> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SERGIO FILIPE PEREIRA DA FELICIDADE"^^xsd:string ;
+  :dataNascimento_aluno "1996-5-26"^^xsd:string ;
+  :id_aluno "A39410"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB12> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35374
+<http://rpcw.di.uminho.pt/2024/music#A35374> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SERGIO MANUEL PEREIRA BARREIRO"^^xsd:string ;
+  :dataNascimento_aluno "2000-9-21"^^xsd:string ;
+  :id_aluno "A35374"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB2> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I2> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A24885
+<http://rpcw.di.uminho.pt/2024/music#A24885> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SERGIO MANUEL RUIVO CARDOSO"^^xsd:string ;
+  :dataNascimento_aluno "1999-3-2"^^xsd:string ;
+  :id_aluno "A24885"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB9> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I9> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38177
+<http://rpcw.di.uminho.pt/2024/music#A38177> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SERGIO NUNO CLARO GOMES"^^xsd:string ;
+  :dataNascimento_aluno "1999-8-21"^^xsd:string ;
+  :id_aluno "A38177"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB4> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35375
+<http://rpcw.di.uminho.pt/2024/music#A35375> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SERGIO RICARDO TEIXEIRA ANDIAS MIRANDA"^^xsd:string ;
+  :dataNascimento_aluno "2005-5-25"^^xsd:string ;
+  :id_aluno "A35375"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS20> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I20> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38181
+<http://rpcw.di.uminho.pt/2024/music#A38181> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SOFIA DA CONCEICAO ALVES MENDES"^^xsd:string ;
+  :dataNascimento_aluno "2003-6-21"^^xsd:string ;
+  :id_aluno "A38181"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS13> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33238
+<http://rpcw.di.uminho.pt/2024/music#A33238> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "SONIA ANDREA GARRIDO DE SA EIRAS"^^xsd:string ;
+  :dataNascimento_aluno "2004-7-20"^^xsd:string ;
+  :id_aluno "A33238"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS18> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I18> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35376
+<http://rpcw.di.uminho.pt/2024/music#A35376> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "TELMA DE FATIMA PIRES DE SA"^^xsd:string ;
+  :dataNascimento_aluno "1997-3-23"^^xsd:string ;
+  :id_aluno "A35376"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38131
+<http://rpcw.di.uminho.pt/2024/music#A38131> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "TIAGO DANIEL CERQUEIRA BOTELHO DA SILVA"^^xsd:string ;
+  :dataNascimento_aluno "2004-4-15"^^xsd:string ;
+  :id_aluno "A38131"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS21> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33240
+<http://rpcw.di.uminho.pt/2024/music#A33240> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "TIAGO JORGE GOMES DA SILVA ARAUJO"^^xsd:string ;
+  :dataNascimento_aluno "1997-4-9"^^xsd:string ;
+  :id_aluno "A33240"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38144
+<http://rpcw.di.uminho.pt/2024/music#A38144> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "TIAGO LEANDRO DE CASTRO RIBEIRO"^^xsd:string ;
+  :dataNascimento_aluno "1999-12-24"^^xsd:string ;
+  :id_aluno "A38144"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB6> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38145
+<http://rpcw.di.uminho.pt/2024/music#A38145> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "TIAGO MIGUEL SOARES FERNANDES"^^xsd:string ;
+  :dataNascimento_aluno "2003-12-8"^^xsd:string ;
+  :id_aluno "A38145"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS12> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I12> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A29254
+<http://rpcw.di.uminho.pt/2024/music#A29254> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "TITO JOSE FERREIRA DE SOUSA LOPES"^^xsd:string ;
+  :dataNascimento_aluno "2002-5-3"^^xsd:string ;
+  :id_aluno "A29254"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS8> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I8> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35418
+<http://rpcw.di.uminho.pt/2024/music#A35418> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "VALTER MIGUEL OLIVEIRA VILAR"^^xsd:string ;
+  :dataNascimento_aluno "1997-7-11"^^xsd:string ;
+  :id_aluno "A35418"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38127
+<http://rpcw.di.uminho.pt/2024/music#A38127> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "VANESSA ALZIRA ABRUNHOSA CARNEIRO DE CASTRO FIDALGO"^^xsd:string ;
+  :dataNascimento_aluno "2003-11-21"^^xsd:string ;
+  :id_aluno "A38127"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS5> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I5> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33282
+<http://rpcw.di.uminho.pt/2024/music#A33282> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "VIRGILIO ABRANTES VINHA"^^xsd:string ;
+  :dataNascimento_aluno "2000-5-4"^^xsd:string ;
+  :id_aluno "A33282"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB17> ;
+  :anoCurso_aluno "2"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I17> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A30266
+<http://rpcw.di.uminho.pt/2024/music#A30266> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "VITOR CARLOS TEIXEIRA PIMENTEL"^^xsd:string ;
+  :dataNascimento_aluno "2002-2-7"^^xsd:string ;
+  :id_aluno "A30266"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS10> ;
+  :anoCurso_aluno "7"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35377
+<http://rpcw.di.uminho.pt/2024/music#A35377> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "VITOR DA COSTA PINHEIRO"^^xsd:string ;
+  :dataNascimento_aluno "1996-3-11"^^xsd:string ;
+  :id_aluno "A35377"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB7> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38192
+<http://rpcw.di.uminho.pt/2024/music#A38192> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "VITOR HUGO DA SILVA NOGUEIRA"^^xsd:string ;
+  :dataNascimento_aluno "2005-12-4"^^xsd:string ;
+  :id_aluno "A38192"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS1> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A35378
+<http://rpcw.di.uminho.pt/2024/music#A35378> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "VITOR HUGO PEREIRA DA SILVA MOREIRA"^^xsd:string ;
+  :dataNascimento_aluno "1998-3-23"^^xsd:string ;
+  :id_aluno "A35378"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB16> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I16> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A38182
+<http://rpcw.di.uminho.pt/2024/music#A38182> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "VITOR MANUEL ALVES DA ROCHA"^^xsd:string ;
+  :dataNascimento_aluno "1998-5-2"^^xsd:string ;
+  :id_aluno "A38182"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB22> ;
+  :anoCurso_aluno "4"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A36773
+<http://rpcw.di.uminho.pt/2024/music#A36773> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "VITOR MANUEL CARVALHO RODRIGUES"^^xsd:string ;
+  :dataNascimento_aluno "2004-6-28"^^xsd:string ;
+  :id_aluno "A36773"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS22> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I22> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A39671
+<http://rpcw.di.uminho.pt/2024/music#A39671> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "VITOR MANUEL PINTO LOPES"^^xsd:string ;
+  :dataNascimento_aluno "1999-8-9"^^xsd:string ;
+  :id_aluno "A39671"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB13> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I13> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A27648
+<http://rpcw.di.uminho.pt/2024/music#A27648> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO RAMOS MATOS"^^xsd:string ;
+  :dataNascimento_aluno "1996-12-24"^^xsd:string ;
+  :id_aluno "A27648"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB4> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I4> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A27620
+<http://rpcw.di.uminho.pt/2024/music#A27620> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "JOAO ANDRE FARIA LOPES"^^xsd:string ;
+  :dataNascimento_aluno "1997-6-6"^^xsd:string ;
+  :id_aluno "A27620"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB21> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I21> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A33199
+<http://rpcw.di.uminho.pt/2024/music#A33199> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "NUNO FILIPE MENDES PEREIRA"^^xsd:string ;
+  :dataNascimento_aluno "1999-3-16"^^xsd:string ;
+  :id_aluno "A33199"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB10> ;
+  :anoCurso_aluno "1"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I10> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#AE-939
+<http://rpcw.di.uminho.pt/2024/music#AE-939> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "Jorge Gonzalez y Hurtado de Mendoza"^^xsd:string ;
+  :dataNascimento_aluno "2003-6-27"^^xsd:string ;
+  :id_aluno "AE-939"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS1> ;
+  :anoCurso_aluno "6"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I1> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#AE-922
+<http://rpcw.di.uminho.pt/2024/music#AE-922> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "Brais Hernandez Facal"^^xsd:string ;
+  :dataNascimento_aluno "2005-9-17"^^xsd:string ;
+  :id_aluno "AE-922"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CS6> ;
+  :anoCurso_aluno "8"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I6> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#AE-907
+<http://rpcw.di.uminho.pt/2024/music#AE-907> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "Oscar Lopez Garcia"^^xsd:string ;
+  :dataNascimento_aluno "2000-4-20"^^xsd:string ;
+  :id_aluno "AE-907"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB7> ;
+  :anoCurso_aluno "3"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I7> .
+  
+###  http://rpcw.di.uminho.pt/2024/music#A4140
+<http://rpcw.di.uminho.pt/2024/music#A4140> rdf:type owl:NamedIndividual ,
+    :Alunos ;
+  :nome_aluno "José Carlos Ramalho"^^xsd:string ;
+  :dataNascimento_aluno "1967-02-01"^^xsd:string ;
+  :id_aluno "A4140"^^xsd:string ;
+  :emCurso <http://rpcw.di.uminho.pt/2024/music#CB14> ;
+  :anoCurso_aluno "5"^^xsd:long ;
+  :temInstrumento <http://rpcw.di.uminho.pt/2024/music#I14> .
+  
