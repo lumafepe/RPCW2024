@@ -41,13 +41,12 @@ GROUP BY ?nomdeDoDistrito
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://rpcw.di.uminho.pt/2024/mapa#>
 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT DISTINCT ?nomes
 WHERE {
-    ?cidade rdf:type :Cidade .
-  	?cidade :emDistrito :Porto .
-    ?ligação rdf:type :Ligação .
-    ?ligação :origem* ?cidade .
-    ?ligação :destino ?destinos .
+    ?cidadesi rdf:type :Cidade .
+  	?cidadesi :emDistrito :Porto .
+    ?destinos (^:destino/:origem)* ?cidadesi .
   	?destinos :nome_cidade ?nomes .
 }
 ```
