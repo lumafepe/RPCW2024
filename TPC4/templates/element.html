@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        <title>Periodic Table: {{data.element_id}}</title>
+        <link rel="icon" href="{{url_for('static',filename="favicon.gif")}}" type="image/gif" />
+        <link rel="stylesheet" href="{{url_for('static',filename="styles/w3.css")}}"/>
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1>Details of Element: {{ data.element_id }} </h1>
+                <h4><a href="/elementos">Elements</a></h4>
+            </header>
+            <div class="w3-container">
+                <ul class="w3-ul">
+                    <li>block: {{data.element.block.value.split('#')[1]}}</li>
+                    <li>classification: {{data.element.classification.value.split('#')[1]}}</li>
+                    <li>group: <a href="/grupo/{{data.element.group.value.split('#group_')[1]}}">{{data.element.group.value.split('#group_')[1]}}</a></li>
+                    <li>period: {{data.element.period.value.split('#period_')[1]}}</li>
+                    <li>standardState: {{data.element.standardState.value.split('#')[1]}}</li>
+                    <li>atomicWeight: {{data.element.atomicWeight.value}}</li>
+                    <li>casRegistryID: {{data.element.casRegistryID.value}}</li>
+                    <li>color: {{data.element.color.value}}</li>
+                    <li>name: {{data.element.name.value}}</li>
+                    <li>symbol: {{data.element.symbol.value}}</li>
+                </ul>
+            </div>
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por RPCW2024 em {{ data.date }}</h5>
+            </footer>
+        </div>
+    </body>
+</html>
