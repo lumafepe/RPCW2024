@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        <title>{{data.tipo}} </title>
+        <link rel="icon" href="{{url_for('static',filename="favicon.gif")}}" type="image/gif" />
+        <link rel="stylesheet" href="{{url_for('static',filename="styles/w3.css")}}"/>
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1>{{data.tipo}}</h1>
+                <h4><a href="/pessoas/">Pessoas</a></h4>
+            </header>
+            <div class="w3-container">
+                <table class="w3-table-all">
+                    <tr>
+                        <th>Nome</th>
+                        <th>DataNascimento</th>
+                        <th>URI</th>
+                        <th>Descrição</th>
+                    </tr>
+                    {% for entry in data.pessoas %}
+                    <tr>
+                        <td>{{ entry.name }}</td>
+                        <td>{{ entry.birthDate }}</td>
+                        <td><a href="/pessoa/{{ entry.main }}">{{ entry.main }}</a></td>
+                        <td>{{ entry.description }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por RPCW2024 em {{ data.date }}</h5>
+            </footer>
+        </div>
+    </body>
+</html>

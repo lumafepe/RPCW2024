@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        <title>Pessoa: {{data.pessoa_Uri}}</title>
+        <link rel="icon" href="{{url_for('static',filename="favicon.gif")}}" type="image/gif" />
+        <link rel="stylesheet" href="{{url_for('static',filename="styles/w3.css")}}"/>
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1>Details of Pessoa: {{ data.pessoa_Uri }} </h1>
+                <h4><a href="/filmes">Pessoa</a></h4>
+            </header>
+            <div class="w3-container">
+                <ul class="w3-ul">
+                    <li>name: {{data.pessoa.name}}</li>
+                    <li>description: {{data.pessoa.description}}</li>
+                    <li>birthDate: {{data.pessoa.birthDate}}</li>
+                    {% for personClass in ['acted','directed','produced','screenWrote'] %}
+                    <table class="w3-table w3-bordered">
+                        <thead>
+                          <tr class="w3-light-grey">
+                            <th>{{personClass}}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {%for filme in data.pessoa[personClass] %}
+                            <tr>
+                                <td>{{filme}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endfor %}
+                </ul>
+
+            </div>
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por RPCW2024 em {{ data.date }}</h5>
+            </footer>
+        </div>
+    </body>
+</html>
