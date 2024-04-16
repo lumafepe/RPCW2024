@@ -1,0 +1,7 @@
+### Descrição:
+Programa para criar uma ontologia com a arvore geonologica da biblia.
+
+### Iniciar o programa
+```
+python converter.py
+``
