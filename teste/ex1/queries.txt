@@ -1,0 +1,55 @@
+Quantos alunos estão registados? (inteiro)
+PREFIX : <http://rpcw.di.uminho.pt/2024/teste/>
+select (count(distinct(?alunos)) as ?N_alunos)
+where {
+?alunos a :Aluno .
+}
+Quantos alunos frequentam o curso "LCC"? (inteiro)
+PREFIX : <http://rpcw.di.uminho.pt/2024/teste/>
+select (count(distinct(?alunos)) as ?N_alunos)
+where {
+?alunos a :Aluno ;
+    :curso "LCC".
+}
+Que alunos tiveram nota positiva no exame de época normal? (lista ordenada alfabeticamente por nome com: idAluno, nome, curso, nota do exame);
+PREFIX : <http://rpcw.di.uminho.pt/2024/teste/>
+select ?idAluno ?nome ?curso ?notaExame
+where {
+	?aluno a :Aluno .
+	?exame a :Normal .
+	?aluno :exame ?exame.
+    ?exame :nota ?notaExame .
+    FILTER (?notaExame >= 9.5) .
+	?aluno :nome ?nome .
+	?aluno :id ?idAluno .
+	?aluno :curso ?curso .
+} ORDER BY ?nome
+Qual a distribuição dos alunos pelas notas do projeto? (lista com: nota e número de alunos que
+obtiveram essa nota)
+PREFIX : <http://rpcw.di.uminho.pt/2024/teste/>
+select ?notaProjeto (count(?alunos) as ?N_alunos)
+where {
+?alunos a :Aluno .
+?aluno :projeto ?notaProjeto .
+} group by ?notaProjeto
+Quais os alunos mais trabalhadores durante o semestre? (lista ordenada por ordem decrescente do total: idAluno, nome, curso, total = somatório dos resultados dos TPC)
+PREFIX : <http://rpcw.di.uminho.pt/2024/teste/>
+
+SELECT ?id ?nome ?curso (SUM(?tpcs) AS ?total) 
+WHERE {
+    ?aluno a :Aluno .
+    ?aluno :id ?id .
+    ?aluno :nome ?nome .
+    ?aluno :curso ?curso .
+    ?aluno :tpc/:nota ?tpcs .
+}
+GROUP BY ?aluno ?id ?nome ?curso
+ORDER BY ?total
+
+Qual a distribuição dos alunos pelos vários cursos? (lista de cursos, ordenada alfabeticamente por curso, com: curso, número de alunos nesse curso)
+PREFIX : <http://rpcw.di.uminho.pt/2024/teste/>
+select ?c (count(?alunos) as ?N_alunos)
+where {
+?alunos a :Aluno .
+?alunos :curso ?c
+} group by ?c
