@@ -1,0 +1,25 @@
+services:
+  graphdb:
+    image: khaller/graphdb-free:9.11.2
+    ports:
+      - "7200:7200"
+    network_mode: "host"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    network_mode: "host"
+    depends_on:
+      - graphdb
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    network_mode: "host"
+    depends_on:
+      - backend
